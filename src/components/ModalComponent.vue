@@ -45,7 +45,6 @@ export default defineComponent({
     const modalOpen = ref(inject("modalOpen", false));
 
     watch(modalOpen, (newValue) => {
-      debugger;
       if (newValue) {
         show();
       } else {
@@ -61,7 +60,6 @@ export default defineComponent({
     });
 
     function show() {
-      debugger;
       if (!document.body.classList.contains("modal-open")) {
         document.body.classList.add("modal-open");
       }
@@ -73,7 +71,6 @@ export default defineComponent({
     }
 
     function hide() {
-      debugger;
       if (document.body.classList.contains("modal-open")) {
         document.body.classList.remove("modal-open");
       }
@@ -85,7 +82,6 @@ export default defineComponent({
     }
 
     function handleGlobalClick(event: Event) {
-      debugger;
       if (
         modalOpen.value &&
         modal &&
@@ -93,9 +89,9 @@ export default defineComponent({
         !modal.value.contains(event.target as Node)
       ) {
         hide();
+        event.stopImmediatePropagation();
+        event.stopPropagation();
       }
-      event.stopImmediatePropagation();
-      event.stopPropagation();
     }
 
     return {
