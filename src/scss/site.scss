@@ -1,3 +1,10 @@
+$navbar-bg: rgb(0, 19, 28);
+$navbar-li-active-color: #ffeda0;
+$navbar-pl: 25px;
+$navbar-pr: 25px;
+$navbar-active-route-color: #FFFFFF;
+$text-color: #fff188;
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -6,17 +13,29 @@
     color: #2c3e50;
     padding-left: 0;
     padding-right: 0;
+    height: 100%;
   }
 
-  nav {
-    padding: 30px;
-  
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-  
-      &.router-link-exact-active {
-        color: #42b983;
-      }
+  #wrap {
+    min-height: 100%;
+
+    .main {
+        overflow: auto;
+        overflow-x: hidden;
+
+        .overlay {
+            display: block;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            z-index: 1100;
+            opacity: 1;
+        }
     }
-  }
+}
+
+.sitepage {
+  padding-top: 60px;
+}
