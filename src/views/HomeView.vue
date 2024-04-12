@@ -37,10 +37,36 @@
       <button @click="drawerClick">Show Drawer</button>
       <button @click="modalClick">Show Modal</button>
     </div>
+    <div
+      class="offset-sm-1 offset-md-2 offset-xl-4 col-sm-10 col-md-8 col-xl-4 mt-5"
+    >
+      <Carousel
+        :items-to-show="2"
+        :wrap-around="true"
+        :breakpoints="breakPoints"
+      >
+        <Slide v-for="(slide, index) in slides" :key="index">
+          <div class="carousel__item">
+            <div class="card" @click="slideClicked($event, slide)">
+              <div class="card-body">
+                <h5 class="card-title">{{ slide.title }}</h5>
+                <img :src="slide.img" :alt="slide.alt" style="width: 250px" />
+              </div>
+            </div>
+          </div>
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Navigation } from "vue3-carousel";
 import {
   provide,
   inject,
@@ -50,6 +76,7 @@ import {
   defineAsyncComponent,
   defineComponent,
 } from "vue";
+import { SlideContent } from "@/types/SlideContent";
 const showModal = ref(false);
 const showDrawer = ref(false);
 provide("modalOpen", readonly(showModal));
@@ -69,6 +96,37 @@ function modalClick(event: Event) {
   event.stopImmediatePropagation();
   event.stopPropagation();
 }
+
+function slideClicked(e: Event, slide: SlideContent) {
+  e.stopPropagation();
+}
+
+const breakPoints = {
+  300: {
+    itemsToShow: 1,
+  },
+  1024: {
+    itemsToShow: 2,
+  },
+};
+
+const slides: SlideContent[] = [
+  {
+    img: require("../assets/login_pulte_mortgage.png"),
+    alt: "login.pultemortgage.com",
+    title: "Login Pulte Mortgage",
+  },
+  {
+    img: require("../assets/blog_pultemortgage.png"),
+    alt: "blog.pultemortgage.com",
+    title: "Pulte Mortgage Blog",
+  },
+  {
+    img: require("../assets/splinterlands.png"),
+    alt: "Splinterlands.com",
+    title: "Splinterlands",
+  },
+];
 </script>
 
 <style lang="scss">
@@ -82,6 +140,24 @@ function modalClick(event: Event) {
     background: rgba(0, 0, 0, 0.7);
     z-index: 1100;
     opacity: 1;
+  }
+
+  .carousel__item {
+    .card {
+      width: 350px;
+      min-height: 200px;
+      border: 2px solid black;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .carousel__prev {
+    left: -3vw;
+  }
+  .carousel__next {
+    right: -3vw;
   }
 }
 </style>

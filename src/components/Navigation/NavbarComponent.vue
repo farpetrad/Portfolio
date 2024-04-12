@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
       <div class="navbar-header my-2">
         <a class="navbar-brand ms-5 me-0" href="/">
-          <font-awesome-icon :icon="faVuejs" />
+          <slot name="brand" />
         </a>
       </div>
 
@@ -32,7 +32,7 @@
             'mr-auto': alignment === 'left',
           }"
         >
-          <slot name="content"></slot>
+          <slot name="content" />
         </div>
       </div>
     </nav>
@@ -41,7 +41,6 @@
 
 <script setup lang="ts">
 import { ref, defineProps } from "vue";
-import { faVuejs } from "@fortawesome/free-brands-svg-icons";
 
 const navbarToggler = ref<HTMLButtonElement>();
 const navbarContent = ref<HTMLDivElement>();
