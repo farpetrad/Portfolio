@@ -20,12 +20,11 @@
           :closeInHeader="true"
           class="text-center"
         >
-          <template v-slot:header> Header </template>
+          <template v-slot:header>
+            <h4>{{ selectedSlide?.title ?? "" }}</h4>
+          </template>
           <template v-slot:body>
-            <div class="container">
-              <div class="row text-center">This is a body</div>
-              <img alt="Vue logo" src="../assets/logo.png" />
-            </div>
+            <pulte-login />
           </template>
         </modal>
       </teleport>
@@ -67,6 +66,9 @@
 <script setup lang="ts">
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
+const PulteLogin = defineAsyncComponent(
+  () => import("../components/Projects/PulteLogin.vue")
+);
 import {
   provide,
   inject,
@@ -75,8 +77,11 @@ import {
   computed,
   defineAsyncComponent,
   defineComponent,
+  Ref,
 } from "vue";
 import { SlideContent } from "@/types/SlideContent";
+
+const selectedSlide: Ref<SlideContent> = ref(null);
 const showModal = ref(false);
 const showDrawer = ref(false);
 provide("modalOpen", readonly(showModal));
@@ -98,6 +103,7 @@ function modalClick(event: Event) {
 }
 
 function slideClicked(e: Event, slide: SlideContent) {
+  selectedSlide.value = slide;
   e.stopPropagation();
 }
 
@@ -105,7 +111,7 @@ const breakPoints = {
   300: {
     itemsToShow: 1,
   },
-  1024: {
+  2100: {
     itemsToShow: 2,
   },
 };
@@ -114,17 +120,20 @@ const slides: SlideContent[] = [
   {
     img: require("../assets/login_pulte_mortgage.png"),
     alt: "login.pultemortgage.com",
-    title: "Login Pulte Mortgage",
+    title: "Pulte Mortgage",
+    component: "",
   },
   {
     img: require("../assets/blog_pultemortgage.png"),
     alt: "blog.pultemortgage.com",
     title: "Pulte Mortgage Blog",
+    component: "",
   },
   {
     img: require("../assets/splinterlands.png"),
     alt: "Splinterlands.com",
     title: "Splinterlands",
+    component: "",
   },
 ];
 </script>
