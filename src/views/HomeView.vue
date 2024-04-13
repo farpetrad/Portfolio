@@ -1,7 +1,6 @@
 <template>
   <div class="home container-fluid sitepage">
     <div class="col-12">
-      <img alt="Vue logo" src="../assets/logo.png" />
       <teleport to="#target" :disabled="!showDrawer">
         <drawer
           v-show="showDrawer"
@@ -32,10 +31,7 @@
         <div class="overlay" key="overlay" v-show="showDrawer"></div>
       </transition>
     </div>
-    <div class="col-12 mt-5">
-      <button @click="drawerClick">Show Drawer</button>
-      <button @click="modalClick">Show Modal</button>
-    </div>
+    <div class="col-12 text-center"><h4>Projects</h4></div>
     <div
       class="offset-sm-1 offset-md-2 offset-xl-4 col-sm-10 col-md-8 col-xl-4 mt-5"
     >

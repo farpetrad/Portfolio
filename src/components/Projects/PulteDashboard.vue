@@ -10,8 +10,9 @@
         provides a convienence way to upload documents and/or connect their
         financial accounts for providing required financial information for a
         loan. The site was developed using Vue.js 2, vue-router, and vuex in
-        javascript. The site makes use of many different microservices that were
-        constructed in .NET Core as well as legacy SOAP based services.
+        javascript with a bootstrap layout for responsiveness. The site makes
+        use of many different microservices that were constructed in .NET Core
+        as well as legacy SOAP based services.
       </div>
       <div class="col-4">
         <img src="../../assets/secure_pulte_1.png" class="img-fluid" />

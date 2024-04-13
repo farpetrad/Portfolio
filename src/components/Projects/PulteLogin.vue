@@ -13,7 +13,8 @@
           >website</a
         >
         , and homepage was constructed from the ground up using Vue.js 2,
-        vue-router and vuex in javascript.
+        vue-router and vuex in javascript with a bootstrap layout for
+        responsiveness.
       </div>
       <div class="col-4">
         <img src="../../assets/login_pulte_mortgage.png" class="img-fluid" />
