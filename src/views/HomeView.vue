@@ -24,7 +24,7 @@
             <h4>{{ selectedSlide?.title ?? "" }}</h4>
           </template>
           <template v-slot:body>
-            <pulte-login />
+            <component :is="selectedSlide?.component"></component>
           </template>
         </modal>
       </teleport>
@@ -66,9 +66,8 @@
 <script setup lang="ts">
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
-const PulteLogin = defineAsyncComponent(
-  () => import("../components/Projects/PulteLogin.vue")
-);
+import PulteLogin from "../components/Projects/PulteLogin.vue";
+
 import {
   provide,
   inject,
@@ -81,7 +80,7 @@ import {
 } from "vue";
 import { SlideContent } from "@/types/SlideContent";
 
-const selectedSlide: Ref<SlideContent> = ref(null);
+const selectedSlide: Ref<SlideContent | null> = ref(null);
 const showModal = ref(false);
 const showDrawer = ref(false);
 provide("modalOpen", readonly(showModal));
@@ -104,6 +103,7 @@ function modalClick(event: Event) {
 
 function slideClicked(e: Event, slide: SlideContent) {
   selectedSlide.value = slide;
+  showModal.value = true;
   e.stopPropagation();
 }
 
@@ -121,19 +121,25 @@ const slides: SlideContent[] = [
     img: require("../assets/login_pulte_mortgage.png"),
     alt: "login.pultemortgage.com",
     title: "Pulte Mortgage",
-    component: "",
+    component: defineAsyncComponent(
+      () => import("../components/Projects/PulteLogin.vue")
+    ),
   },
   {
-    img: require("../assets/blog_pultemortgage.png"),
-    alt: "blog.pultemortgage.com",
-    title: "Pulte Mortgage Blog",
-    component: "",
+    img: require("../assets/articles_pultemortgage.png"),
+    alt: "articles.pultemortgage.com",
+    title: "Pulte Articles",
+    component: defineAsyncComponent(
+      () => import("../components/Projects/PulteArticles.vue")
+    ),
   },
   {
     img: require("../assets/splinterlands.png"),
     alt: "Splinterlands.com",
     title: "Splinterlands",
-    component: "",
+    component: defineAsyncComponent(
+      () => import("../components/Projects/SplinterLands.vue")
+    ),
   },
 ];
 </script>
