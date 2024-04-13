@@ -141,6 +141,22 @@ const slides: SlideContent[] = [
       () => import("../components/Projects/SplinterLands.vue")
     ),
   },
+  {
+    img: require("../assets/secure_pulte_1.png"),
+    alt: "Myloan Dashboard",
+    title: "MyLoan Dashboard",
+    component: defineAsyncComponent(
+      () => import("../components/Projects/PulteDashboard.vue")
+    ),
+  },
+  {
+    img: require("../assets/start_pulte_1.png"),
+    alt: "start.pultemortgage.com",
+    title: "MyLoan Loan Application",
+    component: defineAsyncComponent(
+      () => import("../components/Projects/PulteStart.vue")
+    ),
+  },
 ];
 </script>
 
