@@ -1,15 +1,16 @@
 <template>
   <div class="nav-item" id="nav-item">
     <router-link v-if="isInternalLink" :to="link.href">
-      {{ link.label }}
+      <slot>{{ link.label }}</slot>
     </router-link>
     <a
       v-else
       :href="link.href"
       :target="link.target ?? '_blank'"
       rel="noreferrer"
-      >{{ link.label }}</a
     >
+      <slot>{{ link.label }}</slot>
+    </a>
   </div>
 </template>
 
@@ -48,6 +49,7 @@ export default defineComponent({
   &.nav-item {
     padding-left: 1vw;
     padding-right: 1vw;
+    align-content: center;
 
     a {
       text-decoration: none;
