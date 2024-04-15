@@ -5,6 +5,8 @@ $navbar-pr: 25px;
 $navbar-active-route-color: #FFFFFF;
 $text-color: #fff188;
 
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
