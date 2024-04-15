@@ -28,8 +28,8 @@
         <div
           :class="{
             'navbar-nav': true,
-            'ml-auto': alignment === 'right',
-            'mr-auto': alignment === 'left',
+            'ms-auto': alignment === 'right',
+            'me-auto': alignment === 'left',
           }"
         >
           <slot name="content" />
