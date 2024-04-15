@@ -8,7 +8,6 @@ import {
   FontAwesomeLayersText,
 } from "@fortawesome/vue-fontawesome";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import "./scss/site.scss";
 
 config.autoAddCss = false;
 

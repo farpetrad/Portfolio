@@ -4,4 +4,11 @@ module.exports = defineConfig({
   configureWebpack: {
     devtool: "source-map",
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: "@import 'src/scss/site.scss';",
+      },
+    },
+  },
 });

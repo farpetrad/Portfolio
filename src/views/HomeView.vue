@@ -31,8 +31,10 @@
         <div class="overlay" key="overlay" v-show="showDrawer"></div>
       </transition>
     </div>
-    <div class="row">
-      <div class="offset-sm-1 offset-md-2 col-sm-10 col-md-2 mt-5 about_box">
+    <div class="row mt-5">
+      <div
+        class="offset-sm-1 offset-md-2 col-sm-10 col-md-4 col-xl-2 about_box"
+      >
         <img src="../assets/me.jpg" class="img-cropped" />
         <div class="text-center">
           <h4>Neal</h4>
@@ -80,6 +82,10 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-6 text-start">
+        <h1>&#60;h1&#62; I'm Neal,</h1>
+        <h1>a Full-stack developer&#60;/h1&#62;</h1>
       </div>
     </div>
   </div>
@@ -142,10 +148,9 @@ const skills = ["C/C++", "C#", "Javascript", "Typescript", "Vue.js", "React"];
     border-radius: 80px 0px 80px 0px;
     border: solid 4px black;
     border-width: 2px;
-    height: 300px;
-    background-color: #044458;
-    filter: drop-shadow(-4px -4px 2px #d98a02);
-    min-height: 40vh;
+    background-color: $primary;
+    filter: drop-shadow(-4px -4px 2px $secondary);
+    padding: 15px;
 
     .img-cropped {
       margin-top: 20px;
