@@ -31,39 +31,11 @@
         <div class="overlay" key="overlay" v-show="showDrawer"></div>
       </transition>
     </div>
-    <div class="col-12 text-center"><h4>Projects</h4></div>
-    <div
-      class="offset-sm-1 offset-md-2 offset-xl-4 col-sm-10 col-md-8 col-xl-4 mt-5"
-    >
-      <Carousel
-        :items-to-show="2"
-        :wrap-around="true"
-        :breakpoints="breakPoints"
-      >
-        <Slide v-for="(slide, index) in slides" :key="index">
-          <div class="carousel__item">
-            <div class="card" @click="slideClicked($event, slide)">
-              <div class="card-body">
-                <h5 class="card-title">{{ slide.title }}</h5>
-                <img :src="slide.img" :alt="slide.alt" style="width: 250px" />
-              </div>
-            </div>
-          </div>
-        </Slide>
-
-        <template #addons>
-          <Navigation />
-        </template>
-      </Carousel>
-    </div>
+    <div class="offset-sm-1 offset-md-2 col-sm-10 col-md-2 col-xl-2 mt-5"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Navigation } from "vue3-carousel";
-import PulteLogin from "../components/Projects/PulteLogin.vue";
-
 import {
   provide,
   inject,
@@ -96,64 +68,6 @@ function modalClick(event: Event) {
   event.stopImmediatePropagation();
   event.stopPropagation();
 }
-
-function slideClicked(e: Event, slide: SlideContent) {
-  selectedSlide.value = slide;
-  showModal.value = true;
-  e.stopPropagation();
-}
-
-const breakPoints = {
-  300: {
-    itemsToShow: 1,
-  },
-  2100: {
-    itemsToShow: 2,
-  },
-};
-
-const slides: SlideContent[] = [
-  {
-    img: require("../assets/login_pulte_mortgage.png"),
-    alt: "login.pultemortgage.com",
-    title: "Pulte Mortgage",
-    component: defineAsyncComponent(
-      () => import("../components/Projects/PulteLogin.vue")
-    ),
-  },
-  {
-    img: require("../assets/articles_pultemortgage.png"),
-    alt: "articles.pultemortgage.com",
-    title: "Pulte Articles",
-    component: defineAsyncComponent(
-      () => import("../components/Projects/PulteArticles.vue")
-    ),
-  },
-  {
-    img: require("../assets/splinterlands.png"),
-    alt: "Splinterlands.com",
-    title: "Splinterlands",
-    component: defineAsyncComponent(
-      () => import("../components/Projects/SplinterLands.vue")
-    ),
-  },
-  {
-    img: require("../assets/secure_pulte_1.png"),
-    alt: "Myloan Dashboard",
-    title: "MyLoan Dashboard",
-    component: defineAsyncComponent(
-      () => import("../components/Projects/PulteDashboard.vue")
-    ),
-  },
-  {
-    img: require("../assets/start_pulte_1.png"),
-    alt: "start.pultemortgage.com",
-    title: "MyLoan Loan Application",
-    component: defineAsyncComponent(
-      () => import("../components/Projects/PulteStart.vue")
-    ),
-  },
-];
 </script>
 
 <style lang="scss">
@@ -167,24 +81,6 @@ const slides: SlideContent[] = [
     background: rgba(0, 0, 0, 0.7);
     z-index: 1100;
     opacity: 1;
-  }
-
-  .carousel__item {
-    .card {
-      width: 350px;
-      min-height: 200px;
-      border: 2px solid black;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-  .carousel__prev {
-    left: -3vw;
-  }
-  .carousel__next {
-    right: -3vw;
   }
 }
 </style>
