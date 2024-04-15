@@ -31,7 +31,57 @@
         <div class="overlay" key="overlay" v-show="showDrawer"></div>
       </transition>
     </div>
-    <div class="offset-sm-1 offset-md-2 col-sm-10 col-md-2 col-xl-2 mt-5"></div>
+    <div class="row">
+      <div class="offset-sm-1 offset-md-2 col-sm-10 col-md-2 mt-5 about_box">
+        <img src="../assets/me.jpg" class="img-cropped" />
+        <div class="text-center">
+          <h4>Neal</h4>
+          <h5>Full-stack developer</h5>
+        </div>
+        <div class="text-start content-item">
+          <font-awesome-icon
+            :icon="faEnvelope"
+            style="color: white; margin-right: 5px"
+          />
+          <a href="mailto:neal.cynkus@gmail.com">neal.cynkus@gmail.com</a>
+        </div>
+        <div class="text-start content-item">
+          <font-awesome-icon
+            :icon="faLocationDot"
+            style="color: white; margin-right: 5px"
+          />
+          <span>Denver, Co</span>
+        </div>
+        <div class="text-start content-item">
+          <font-awesome-icon
+            :icon="faSuitcase"
+            style="color: white; margin-right: 5px"
+          />
+          <span>Vue / React Full-stack</span>
+        </div>
+        <div class="text-start content-item">
+          <font-awesome-icon
+            :icon="faLink"
+            style="color: white; margin-right: 5px"
+          />
+
+          <a href="https://myportfolio-beta-hazel.vercel.app/"
+            >https://myportfolio-beta-hazel.vercel.app/</a
+          >
+        </div>
+        <div class="row">
+          <div class="col-12 mt-3">
+            <div
+              class="badge rounded-pill bg-warning me-2 skill"
+              v-for="(skill, index) in skills"
+              :key="index"
+            >
+              {{ skill }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -46,9 +96,12 @@ import {
   defineComponent,
   Ref,
 } from "vue";
-import { SlideContent } from "@/types/SlideContent";
-
-const selectedSlide: Ref<SlideContent | null> = ref(null);
+import {
+  faEnvelope,
+  faLocationDot,
+  faSuitcase,
+  faLink,
+} from "@fortawesome/sharp-regular-svg-icons";
 const showModal = ref(false);
 const showDrawer = ref(false);
 provide("modalOpen", readonly(showModal));
@@ -68,6 +121,8 @@ function modalClick(event: Event) {
   event.stopImmediatePropagation();
   event.stopPropagation();
 }
+
+const skills = ["C/C++", "C#", "Javascript", "Typescript", "Vue.js", "React"];
 </script>
 
 <style lang="scss">
@@ -81,6 +136,36 @@ function modalClick(event: Event) {
     background: rgba(0, 0, 0, 0.7);
     z-index: 1100;
     opacity: 1;
+  }
+
+  .about_box {
+    border-radius: 80px 0px 80px 0px;
+    border: solid 4px black;
+    border-width: 2px;
+    height: 300px;
+    background-color: #044458;
+    filter: drop-shadow(-4px -4px 2px #d98a02);
+    min-height: 40vh;
+
+    .img-cropped {
+      margin-top: 20px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    h4 {
+      color: white;
+    }
+    h5 {
+      color: white;
+    }
+    .content-item {
+      margin-left: 10px;
+      color: white;
+    }
+    .skill {
+      color: #044458;
+    }
   }
 }
 </style>
