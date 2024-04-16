@@ -29,7 +29,7 @@
     </div>
     <div class="row mt-5">
       <div
-        class="offset-sm-1 offset-md-2 col-sm-10 col-md-4 col-xl-2 about_box"
+        class="offset-sm-1 offset-xl-2 col-sm-10 col-md-4 col-xl-2 about_box d-none d-md-block"
       >
         <img src="../assets/me.jpg" class="img-cropped" />
         <div class="text-center">
@@ -93,27 +93,37 @@
         </p>
         <p class="code">&#60;/p&#62;</p>
       </div>
-      <div class="col-2 experience-box">
+      <div class="col-sm-10 col-md-4 col-xxl-2 experience-box">
         <div class="experience-container">
           <div class="row">
-            <div class="col-4 text-center">
+            <div class="col-sm-12 col-xxl-4">
               <h4>4</h4>
             </div>
-            <div class="col-8 highlight text-start">Programming Languages</div>
+            <div class="col-sm-12 col-xxl-8 highlight">
+              Programming Languages
+            </div>
           </div>
           <div class="row">
-            <div class="col-4 text-center">
+            <div class="col-sm-12 col-xxl-4">
               <h4>6</h4>
             </div>
-            <div class="col-8 highlight text-start">Development Tools</div>
+            <div class="col-sm-12 col-xxl-8 highlight">Development Tools</div>
           </div>
           <div class="row">
-            <div class="col-4 text-center">
+            <div class="col-sm-12 col-xxl-4">
               <h4>16</h4>
             </div>
-            <div class="col-8 highlight text-start">Years of Experience</div>
+            <div class="col-sm-12 col-xxl-8 highlight">Years of Experience</div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row mouse">
+      <div class="col-12 mouse-scroll-container">
+        <font-awesome-icon :icon="faComputerMouseScrollwheel" size="2x" />
+      </div>
+      <div class="col-12 mouse-scroll-container mt-2">
+        <img src="../assets/Arrow 1.svg" class="mouse-icon" />
       </div>
     </div>
   </div>
@@ -136,6 +146,7 @@ import {
   faSuitcase,
   faLink,
 } from "@fortawesome/sharp-regular-svg-icons";
+import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
 const showModal = ref(false);
 const showDrawer = ref(false);
 provide("modalOpen", readonly(showModal));
@@ -156,7 +167,16 @@ function modalClick(event: Event) {
   event.stopPropagation();
 }
 
-const skills = ["C/C++", "C#", "Javascript", "Typescript", "Vue.js", "React"];
+const skills = [
+  "C/C++",
+  "C#",
+  "Javascript",
+  "Typescript",
+  "Vue.js",
+  "React",
+  "CSS",
+  "SASS",
+];
 </script>
 
 <style lang="scss">
@@ -221,13 +241,13 @@ const skills = ["C/C++", "C#", "Javascript", "Typescript", "Vue.js", "React"];
     }
   }
   .experience-box {
-    padding: 3rem;
+    padding: 2rem;
     .experience-container {
       background-color: $secondary;
       width: 100%;
       height: 100%;
       border-radius: 40px;
-      padding: 3rem 3rem 0rem 3rem;
+      padding: 4rem 3rem 0rem 3rem;
 
       h4 {
         font-family: "Open Sans";
@@ -242,6 +262,16 @@ const skills = ["C/C++", "C#", "Javascript", "Typescript", "Vue.js", "React"];
       .highlight {
         align-content: center;
         color: #ffffff;
+      }
+    }
+  }
+  .mouse {
+    color: $primary;
+    .mouse-scroll-container {
+      align-content: center;
+      .mouse-icon {
+        width: 80px;
+        height: 80px;
       }
     }
   }
