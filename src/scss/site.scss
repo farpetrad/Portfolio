@@ -583,7 +583,8 @@ $components-offcanvas-border: #00000033;
     color: #2c3e50;
     padding-left: 0;
     padding-right: 0;
-    height: 100%;
+    height: 100vh;
+    background-color: #ced4da;
   }
 
   #wrap {
@@ -603,6 +604,10 @@ $components-offcanvas-border: #00000033;
             z-index: 1100;
             opacity: 1;
         }
+    }
+
+    a {
+      color: $light;
     }
 }
 

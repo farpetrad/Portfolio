@@ -70,7 +70,7 @@
         <div class="row">
           <div class="col-12 mt-3">
             <div
-              class="badge rounded-pill bg-warning me-2 skill"
+              class="badge rounded-pill bg-warning me-2 mt-2 skill"
               v-for="(skill, index) in skills"
               :key="index"
             >
@@ -79,9 +79,41 @@
           </div>
         </div>
       </div>
-      <div class="col-6 text-start">
-        <h1>&#60;h1&#62; I'm Neal,</h1>
-        <h1>a Full-stack developer&#60;/h1&#62;</h1>
+      <div class="col-4 text-start main-title">
+        <p class="code">&#60;h1&#62;</p>
+        <h1>I'm <span class="name">Neal</span>,</h1>
+        <span>
+          <h1>a Full-stack developer</h1>
+          <span class="code">&#60;/h1&#62;</span>
+        </span>
+        <p class="code mt-4">&#60;p&#62;</p>
+        <p>
+          I help business grow by crafting amazing web experiences. If you’re
+          looking for a developer that likes to get stuff done,
+        </p>
+        <p class="code">&#60;/p&#62;</p>
+      </div>
+      <div class="col-2 experience-box">
+        <div class="experience-container">
+          <div class="row">
+            <div class="col-4 text-center">
+              <h4>4</h4>
+            </div>
+            <div class="col-8 highlight text-start">Programming Languages</div>
+          </div>
+          <div class="row">
+            <div class="col-4 text-center">
+              <h4>6</h4>
+            </div>
+            <div class="col-8 highlight text-start">Development Tools</div>
+          </div>
+          <div class="row">
+            <div class="col-4 text-center">
+              <h4>16</h4>
+            </div>
+            <div class="col-8 highlight text-start">Years of Experience</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -166,6 +198,51 @@ const skills = ["C/C++", "C#", "Javascript", "Typescript", "Vue.js", "React"];
     }
     .skill {
       color: #044458;
+    }
+  }
+  .main-title {
+    align-content: center;
+    padding: 4rem;
+    h1 {
+      font-weight: bold;
+      span.name {
+        color: $secondary;
+      }
+    }
+    span {
+      h1 {
+        white-space: nowrap;
+        display: inline;
+      }
+    }
+    .code {
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+  .experience-box {
+    padding: 3rem;
+    .experience-container {
+      background-color: $secondary;
+      width: 100%;
+      height: 100%;
+      border-radius: 40px;
+      padding: 3rem 3rem 0rem 3rem;
+
+      h4 {
+        font-family: "Open Sans";
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        text-align: center;
+        color: $primary;
+      }
+
+      .highlight {
+        align-content: center;
+        color: #ffffff;
+      }
     }
   }
 }
