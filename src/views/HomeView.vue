@@ -19,12 +19,8 @@
           :closeInHeader="true"
           class="text-center"
         >
-          <template v-slot:header>
-            <h4>{{ selectedSlide?.title ?? "" }}</h4>
-          </template>
-          <template v-slot:body>
-            <component :is="selectedSlide?.component"></component>
-          </template>
+          <template v-slot:header></template>
+          <template v-slot:body></template>
         </modal>
       </teleport>
       <transition name="leftSlide" mode="in-out">
