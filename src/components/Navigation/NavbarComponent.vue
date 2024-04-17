@@ -2,7 +2,7 @@
   <div id="navbar-component">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
       <div class="navbar-header my-2">
-        <a class="navbar-brand ms-5 me-0" href="/">
+        <a class="navbar-brand ms-5 me-0" href="#">
           <slot name="brand" />
         </a>
       </div>

@@ -79,15 +79,6 @@ export default defineComponent({
         transform: scaleX(1);
         transform-origin: bottom center;
       }
-
-      &.router-link-active {
-        font-weight: bolder;
-      }
-
-      &.router-link-exact-active {
-        color: #42b883;
-        font-weight: bolder;
-      }
     }
   }
 }

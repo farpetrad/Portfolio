@@ -14,7 +14,6 @@
               <font-awesome-icon :icon="item.icon" size="2x" />
             </nav-item-text>
           </template>
-          <nav-item-image :icon="faLinkedin"></nav-item-image>
         </template>
       </nav-bar>
       <router-view></router-view>
@@ -27,7 +26,7 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import NavItemText from "./components/Navigation/NavItemText.vue";
 import NavItemTextProps from "@/types/NavItemProps";
 const navItems: NavItemTextProps[] = [
-  { href: "/skills", label: "Skills" },
+  { href: "/#skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

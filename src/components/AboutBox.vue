@@ -58,16 +58,7 @@ import {
   faLink,
 } from "@fortawesome/sharp-regular-svg-icons";
 
-const skills = [
-  "C/C++",
-  "C#",
-  "Javascript",
-  "Typescript",
-  "Vue.js",
-  "React",
-  "CSS",
-  "SASS",
-];
+const skills = ["Vue.js", "React", "C#", "C/C++"];
 </script>
 
 <style lang="scss">
