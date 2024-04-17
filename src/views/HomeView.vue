@@ -1,40 +1,13 @@
 <template>
   <div class="home container-fluid sitepage">
-    <div class="col-12">
-      <teleport to="#target" :disabled="!showDrawer">
-        <drawer
-          v-show="showDrawer"
-          @close-drawer="handleClose"
-          key="drawer"
-          title="Navigation Drawer"
-        >
-          <div class="col-12 text-start">A drawer!</div>
-        </drawer>
-      </teleport>
-      <teleport to="#target" :disabled="!showModal">
-        <modal
-          v-show="showModal"
-          @close="showModal = false"
-          :dismissOnClick="true"
-          :closeInHeader="true"
-          class="text-center"
-        >
-          <template v-slot:header></template>
-          <template v-slot:body></template>
-        </modal>
-      </teleport>
-      <transition name="leftSlide" mode="in-out">
-        <div class="overlay" key="overlay" v-show="showDrawer"></div>
-      </transition>
-    </div>
     <div class="row mt-5">
-      <div class="offset-sm-1 offset-xl-2 col-sm-10 col-md-4 col-xl-2">
+      <div class="offset-sm-1 offset-xl-2 col-sm-10 col-md-4 col-xxl-2">
         <about-box />
       </div>
-      <div class="col-4 text-start">
+      <div class="col-sm-10 col-md-4 text-start">
         <headline-box />
       </div>
-      <div class="col-sm-10 col-md-4 col-xxl-2">
+      <div class="col-sm-10 offset-sm-1 offset-xxl-0 col-md-4 col-xxl-2">
         <experience-box />
       </div>
     </div>
@@ -53,36 +26,7 @@
 import AboutBox from "@/components/AboutBox.vue";
 import ExperienceBox from "@/components/ExperienceBox.vue";
 import HeadlineBox from "@/components/HeadlineBox.vue";
-import {
-  provide,
-  inject,
-  readonly,
-  ref,
-  computed,
-  defineAsyncComponent,
-  defineComponent,
-  Ref,
-} from "vue";
 import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
-const showModal = ref(false);
-const showDrawer = ref(false);
-provide("modalOpen", readonly(showModal));
-provide("drawerOpen", readonly(showDrawer));
-
-function handleClose() {
-  showDrawer.value = !showDrawer.value;
-}
-
-function drawerClick(event: Event) {
-  showDrawer.value = !showDrawer.value;
-  event.stopImmediatePropagation();
-  event.stopPropagation();
-}
-function modalClick(event: Event) {
-  showModal.value = true;
-  event.stopImmediatePropagation();
-  event.stopPropagation();
-}
 </script>
 
 <style lang="scss">

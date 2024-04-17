@@ -18,7 +18,7 @@
 <style lang="scss">
 .main-title {
   align-content: center;
-  padding: 4rem;
+  padding: 2rem;
   h1 {
     font-weight: bold;
     span.name {
@@ -27,13 +27,18 @@
   }
   span {
     h1 {
-      white-space: nowrap;
       display: inline;
     }
   }
   .code {
     color: $primary;
     font-weight: bold;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .main-title {
+    padding: 4rem;
   }
 }
 </style>
