@@ -25,72 +25,63 @@
       </div>
       <div class="offset-xxl-1 col-sm-12 col-xxl-5 text-start">
         <div class="row">
-          <div class="offset-1 col-10">
+          <div class="offset-1 offset-md-0 col-10">
             <h4>Technologies</h4>
           </div>
         </div>
-        <div class="row">
-          <div class="col-4 col-md-2">
-            <skill-box color="#044458" badgeText="CORE" skillText=".NET Core" />
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box
-              color="#CC9A06"
-              badgeText=".NET"
-              skillText=".NET Framework"
-            />
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box skillText="Node Js">
-              <font-awesome-icon
-                :icon="faNodeJs"
-                size="3x"
-                style="color: #193154"
+        <template v-for="(itemRow, index) in technologies" :key="index">
+          <div :class="{ row: true, 'mt-2': index > 0 }">
+            <div
+              v-for="(skill, skillIndex) in itemRow"
+              :key="`${skillIndex}-skill.skillText`"
+              class="col-4 col-md-2"
+            >
+              <skill-box
+                :color="skill.color"
+                :badgeText="skill.badgeText"
+                :skillText="skill.skillText"
+                v-if="!skill.slotContent"
               />
-            </skill-box>
+              <skill-box v-else :skillText="skill.skillText">
+                <font-awesome-icon
+                  :icon="skill.slotContent"
+                  size="3x"
+                  style="color: #193154"
+                />
+              </skill-box>
+            </div>
           </div>
-          <div class="col-4 col-md-2">
-            <skill-box color="#146C43" badgeText="WPF" skillText="WPF" />
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box color="#087990" badgeText="WCF" skillText="WCF" />
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box color="#842029" badgeText="REST" skillText="REST" />
+        </template>
+      </div>
+      <div class="offset-1 offset-md- col-sm-12 col-xxl-5 text-start">
+        <div class="row">
+          <div class="offset-1 offset-md-0 col-10">
+            <h4>Languages</h4>
           </div>
         </div>
-        <div class="row">
-          <div class="col-4 col-md-2">
-            <skill-box skillText="SOAP">
-              <font-awesome-icon
-                :icon="faPumpSoap"
-                size="3x"
-                style="color: #193154"
+        <template v-for="(itemRow, index) in languages" :key="index">
+          <div :class="{ row: true, 'mt-2': index > 0 }">
+            <div
+              v-for="(skill, skillIndex) in itemRow"
+              :key="`${skillIndex}-skill.skillText`"
+              class="col-4 col-md-2"
+            >
+              <skill-box
+                :color="skill.color"
+                :badgeText="skill.badgeText"
+                :skillText="skill.skillText"
+                v-if="!skill.slotContent"
               />
-            </skill-box>
+              <skill-box v-else :skillText="skill.skillText">
+                <font-awesome-icon
+                  :icon="skill.slotContent"
+                  size="3x"
+                  style="color: #193154"
+                />
+              </skill-box>
+            </div>
           </div>
-          <div class="col-4 col-md-2">
-            <skill-box color="#343A40" badgeText="TFVC" skillText="TFVC" />
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box skillText="GIT">
-              <font-awesome-icon
-                :icon="faGitAlt"
-                size="3x"
-                style="color: #193154"
-              />
-            </skill-box>
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box color="#75B798" badgeText="BB" skillText="Babel" />
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box color="#198754" badgeText="TS" skillText="TypeScript" />
-          </div>
-          <div class="col-4 col-md-2">
-            <skill-box color="#ADB5BD" badgeText="JQ" skillText="jQuery" />
-          </div>
-        </div>
+        </template>
       </div>
     </div>
   </div>
@@ -104,8 +95,123 @@ import SkillBox from "@/components/SkillBox.vue";
 import {
   faComputerMouseScrollwheel,
   faPumpSoap,
+  faC,
+  faHashtag,
 } from "@fortawesome/pro-regular-svg-icons";
-import { faNodeJs, faGitAlt } from "@fortawesome/free-brands-svg-icons";
+import {
+  faNodeJs,
+  faGitAlt,
+  faVuejs,
+  faReact,
+  faHtml5,
+  faCss3,
+  faSass,
+} from "@fortawesome/free-brands-svg-icons";
+import SkillBoxProps from "@/types/SkillProps";
+
+const technologies: SkillBoxProps[][] = [
+  [
+    {
+      badgeText: "CORE",
+      skillText: ".NET Core",
+      color: "#044458",
+    },
+    {
+      badgeText: ".NET",
+      skillText: ".NET Framework",
+      color: "#CC9A06",
+    },
+    {
+      skillText: "Node Js",
+      slotContent: faNodeJs,
+    },
+    {
+      badgeText: "WPF",
+      skillText: "WPF",
+      color: "#146C43",
+    },
+    {
+      badgeText: "WCF",
+      skillText: "WCF",
+      color: "#087990",
+    },
+    {
+      badgeText: "REST",
+      skillText: "REST",
+      color: "#842029",
+    },
+  ],
+  [
+    {
+      skillText: "SOAP",
+      slotContent: faPumpSoap,
+    },
+    {
+      badgeText: "TFVC",
+      skillText: "TFVC",
+      color: "#343A40",
+    },
+    {
+      skillText: "GIT",
+      slotContent: faGitAlt,
+    },
+    {
+      badgeText: "BB",
+      skillText: "Babel",
+      color: "#75B798",
+    },
+    {
+      badgeText: "TS",
+      skillText: "TypeScript",
+      color: "#198754",
+    },
+    {
+      badgeText: "JQ",
+      skillText: "jQuery",
+      color: "#ADB5BD",
+    },
+  ],
+];
+
+const languages: SkillBoxProps[][] = [
+  [
+    {
+      skillText: "Vue.js",
+      slotContent: faVuejs,
+    },
+    {
+      skillText: "React",
+      slotContent: faReact,
+    },
+    {
+      skillText: "C/C++",
+      slotContent: faC,
+    },
+    {
+      skillText: "C#",
+      slotContent: faHashtag,
+    },
+  ],
+  [
+    {
+      skillText: "HTML",
+      slotContent: faHtml5,
+    },
+    {
+      skillText: "CSS",
+      slotContent: faCss3,
+    },
+    {
+      skillText: "SASS",
+      slotContent: faSass,
+    },
+    {
+      badgeText: "JS",
+      skillText: "JavaScript",
+      color: "#193154",
+    },
+  ],
+];
 </script>
 
 <style lang="scss">

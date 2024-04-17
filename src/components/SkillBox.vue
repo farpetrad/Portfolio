@@ -8,24 +8,9 @@
 </template>
 
 <script setup lang="ts">
+import SkillBoxProps from "@/types/SkillProps";
 import { defineProps } from "vue";
-defineProps({
-  color: {
-    type: String,
-    required: false,
-    default: "transparent",
-  },
-  badgeText: {
-    type: String,
-    required: false,
-    default: "",
-  },
-  skillText: {
-    type: String,
-    required: true,
-    default: "",
-  },
-});
+defineProps<SkillBoxProps>();
 </script>
 
 <style lang="scss">
@@ -44,7 +29,7 @@ defineProps({
     background-color: v-bind(color);
     width: 44px;
     height: 44px;
-    text-align: center;
+    text-align: end;
     font-family: "Open Sans";
     font-size: 14px;
     font-style: normal;
