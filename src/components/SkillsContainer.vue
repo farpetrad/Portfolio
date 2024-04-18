@@ -1,36 +1,71 @@
 <template>
-  <div class="home container-fluid sitepage">
-    <div class="row mt-5">
-      <div class="offset-sm-1 offset-xxl-2 col-sm-10 col-md-4 col-xxl-2">
-        <about-box />
-      </div>
-      <div class="col-sm-10 col-md-4 text-start">
-        <headline-box />
-      </div>
-      <div class="col-sm-10 offset-sm-1 offset-xxl-0 col-md-4 col-xxl-2">
-        <experience-box />
+  <div class="offset-1 col-10 text-start">
+    <h3>Skills</h3>
+  </div>
+  <div class="offset-xxl-1 col-sm-12 col-xxl-5 text-start mt-2">
+    <div class="row">
+      <div class="offset-1 offset-md-0 col-10">
+        <h4>Technologies</h4>
       </div>
     </div>
-    <div class="row mouse">
-      <div class="col-12 mouse-scroll-container">
-        <font-awesome-icon :icon="faComputerMouseScrollwheel" size="2x" />
+    <template v-for="(itemRow, index) in technologies" :key="index">
+      <div :class="{ row: true, 'mt-3': index > 0 }">
+        <div
+          v-for="(skill, skillIndex) in itemRow"
+          :key="`${skillIndex}-skill.skillText`"
+          class="col-4 col-md-2"
+        >
+          <skill-box
+            :color="skill.color"
+            :badgeText="skill.badgeText"
+            :skillText="skill.skillText"
+            v-if="!skill.slotContent"
+          />
+          <skill-box v-else :skillText="skill.skillText">
+            <font-awesome-icon
+              :icon="skill.slotContent"
+              size="3x"
+              style="color: #193154"
+            />
+          </skill-box>
+        </div>
       </div>
-      <div class="col-12 mouse-scroll-container mt-2">
-        <img src="../assets/Arrow 1.svg" class="mouse-icon" />
+    </template>
+  </div>
+  <div class="offset-0 offset-xxl-1 col-sm-12 col-xxl-5 text-start mt-2">
+    <div class="row">
+      <div class="offset-1 offset-md-0 col-10">
+        <h4>Languages</h4>
       </div>
     </div>
-    <div id="skills" class="row mt-5 mb-5">
-      <skills-container />
-    </div>
+    <template v-for="(itemRow, index) in languages" :key="index">
+      <div :class="{ row: true, 'mt-3': index > 0 }">
+        <div
+          v-for="(skill, skillIndex) in itemRow"
+          :key="`${skillIndex}-skill.skillText`"
+          class="col-4 col-md-2"
+        >
+          <skill-box
+            :color="skill.color"
+            :badgeText="skill.badgeText"
+            :skillText="skill.skillText"
+            v-if="!skill.slotContent"
+          />
+          <skill-box v-else :skillText="skill.skillText">
+            <font-awesome-icon
+              :icon="skill.slotContent"
+              size="3x"
+              style="color: #193154"
+            />
+          </skill-box>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
-<script setup lang="ts">
-import AboutBox from "@/components/AboutBox.vue";
-import ExperienceBox from "@/components/ExperienceBox.vue";
-import HeadlineBox from "@/components/HeadlineBox.vue";
-
-import SkillsContainer from "@/components/SkillsContainer.vue";
+<script lang="ts" setup>
+import SkillBox from "@/components/SkillBox.vue";
 import {
   faComputerMouseScrollwheel,
   faPumpSoap,
@@ -152,29 +187,3 @@ const languages: SkillBoxProps[][] = [
   ],
 ];
 </script>
-
-<style lang="scss">
-.home {
-  .overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1100;
-    opacity: 1;
-  }
-
-  .mouse {
-    color: $primary;
-    .mouse-scroll-container {
-      align-content: center;
-      .mouse-icon {
-        width: 80px;
-        height: 80px;
-      }
-    }
-  }
-}
-</style>
