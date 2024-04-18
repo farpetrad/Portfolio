@@ -66,12 +66,7 @@
 
 <script lang="ts" setup>
 import SkillBox from "@/components/SkillBox.vue";
-import {
-  faComputerMouseScrollwheel,
-  faPumpSoap,
-  faC,
-  faHashtag,
-} from "@fortawesome/pro-regular-svg-icons";
+import { faPumpSoap, faC, faHashtag } from "@fortawesome/pro-regular-svg-icons";
 import {
   faNodeJs,
   faGitAlt,
