@@ -19,18 +19,18 @@
         <img src="../assets/Arrow 1.svg" class="mouse-icon" />
       </div>
     </div>
-    <div id="skills" class="row mt-5">
+    <div id="skills" class="row mt-5 mb-5">
       <div class="offset-1 col-10 text-start">
         <h3>Skills</h3>
       </div>
-      <div class="offset-xxl-1 col-sm-12 col-xxl-5 text-start">
+      <div class="offset-xxl-1 col-sm-12 col-xxl-5 text-start mt-2">
         <div class="row">
           <div class="offset-1 offset-md-0 col-10">
             <h4>Technologies</h4>
           </div>
         </div>
         <template v-for="(itemRow, index) in technologies" :key="index">
-          <div :class="{ row: true, 'mt-2': index > 0 }">
+          <div :class="{ row: true, 'mt-3': index > 0 }">
             <div
               v-for="(skill, skillIndex) in itemRow"
               :key="`${skillIndex}-skill.skillText`"
@@ -53,14 +53,14 @@
           </div>
         </template>
       </div>
-      <div class="offset-0 offset-xxl-1 col-sm-12 col-xxl-5 text-start">
+      <div class="offset-0 offset-xxl-1 col-sm-12 col-xxl-5 text-start mt-2">
         <div class="row">
           <div class="offset-1 offset-md-0 col-10">
             <h4>Languages</h4>
           </div>
         </div>
         <template v-for="(itemRow, index) in languages" :key="index">
-          <div :class="{ row: true, 'mt-2': index > 0 }">
+          <div :class="{ row: true, 'mt-3': index > 0 }">
             <div
               v-for="(skill, skillIndex) in itemRow"
               :key="`${skillIndex}-skill.skillText`"
