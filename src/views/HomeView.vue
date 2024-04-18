@@ -53,7 +53,7 @@
           </div>
         </template>
       </div>
-      <div class="offset-1 offset-md- col-sm-12 col-xxl-5 text-start">
+      <div class="offset-0 offset-xxl-1 col-sm-12 col-xxl-5 text-start">
         <div class="row">
           <div class="offset-1 offset-md-0 col-10">
             <h4>Languages</h4>
