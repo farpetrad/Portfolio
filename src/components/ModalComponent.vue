@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import { computed, ref, inject, watch, Ref, defineComponent } from "vue";
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
+import { faCircleXmark } from "@fortawesome/pro-regular-svg-icons";
 export default defineComponent({
   props: {
     closeInHeader: { type: Boolean, default: true },

@@ -24,7 +24,7 @@
 </template>
 <script setup lang="ts">
 import { inject, defineEmits, defineProps } from "vue";
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
+import { faCircleXmark } from "@fortawesome/pro-regular-svg-icons";
 defineProps({
   title: {
     type: String,
