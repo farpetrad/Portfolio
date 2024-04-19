@@ -20,7 +20,14 @@
       </div>
     </div>
     <div id="skills" class="row mt-5 mb-5">
-      <skills-container />
+      <lazy-loader
+        :min-height="300"
+        :unrender="true"
+        :styles="'row'"
+        class="row"
+      >
+        <skills-container />
+      </lazy-loader>
     </div>
   </div>
 </template>
@@ -29,8 +36,8 @@
 import AboutBox from "@/components/AboutBox.vue";
 import ExperienceBox from "@/components/ExperienceBox.vue";
 import HeadlineBox from "@/components/HeadlineBox.vue";
-
 import SkillsContainer from "@/components/SkillsContainer.vue";
+import LazyLoader from "@/components/LazyLoader.vue";
 import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
 </script>
 
