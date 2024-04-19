@@ -25,6 +25,7 @@ export default {
     styles: {
       type: String,
       default: "",
+      required: false,
     },
   },
   setup(props: any) {
@@ -79,9 +80,8 @@ export default {
 <template>
   <div
     ref="targetEl"
-    id="bob"
     :style="`min-height:${fixedMinHeight ? fixedMinHeight : minHeight}px;`"
-    :classes="{ styles: true }"
+    :class="styles"
   >
     <slot v-if="shouldRender" />
   </div>

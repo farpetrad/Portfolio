@@ -20,12 +20,7 @@
       </div>
     </div>
     <div id="skills" class="row mt-5 mb-5">
-      <lazy-loader
-        :min-height="300"
-        :unrender="true"
-        :styles="'row'"
-        class="row"
-      >
+      <lazy-loader :min-height="300" :unrender="true" class="row">
         <skills-container />
       </lazy-loader>
     </div>
