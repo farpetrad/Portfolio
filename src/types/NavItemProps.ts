@@ -1,10 +1,8 @@
-import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
-
 type NavItemProps = {
   label: string;
   href: string;
   target?: string;
-  icon?: IconDefinition | null;
+  icon?: string;
 };
 
 export default NavItemProps;

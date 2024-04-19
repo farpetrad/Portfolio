@@ -7,7 +7,10 @@ import {
   FontAwesomeLayers,
   FontAwesomeLayersText,
 } from "@fortawesome/vue-fontawesome";
-import { config } from "@fortawesome/fontawesome-svg-core";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { config, library, dom } from "@fortawesome/fontawesome-svg-core";
+
+library.add([faLinkedin, faGithub]);
 
 config.autoAddCss = false;
 
@@ -24,3 +27,5 @@ const app = createApp(App)
   .component("font-awesome-layers-text", FontAwesomeLayersText)
   .component("nav-bar", NavBarComponent);
 app.mount("#app");
+
+dom.watch();
