@@ -22,11 +22,6 @@ export default {
       type: Number,
       default: 10000,
     },
-    styles: {
-      type: String,
-      default: "",
-      required: false,
-    },
   },
   setup(props: any) {
     const shouldRender = ref(false);
@@ -81,7 +76,6 @@ export default {
   <div
     ref="targetEl"
     :style="`min-height:${fixedMinHeight ? fixedMinHeight : minHeight}px;`"
-    :class="styles"
   >
     <slot v-if="shouldRender" />
   </div>
