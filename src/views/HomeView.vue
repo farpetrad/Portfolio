@@ -1,5 +1,5 @@
 <template>
-  <div class="home container-fluid sitepage">
+  <div class="home container-fluid sitepage" style="align-content: center">
     <div class="row mt-5">
       <div class="offset-sm-1 col-sm-10 col-md-4 col-xxl-2">
         <about-box />
@@ -19,12 +19,14 @@
         <img src="../assets/Arrow 1.svg" class="mouse-icon" />
       </div>
     </div>
-    <div id="skills" class="row mt-5 mb-5">
-      <lazy-loader :min-height="300" :unrender="true" class="row p-0">
-        <skills-container />
-      </lazy-loader>
-    </div>
-    <div id="projects" class="row mt-5 mb-5">
+  </div>
+  <div class="container-fluid" id="skills">
+    <lazy-loader :min-height="300" :unrender="true" class="row p-0">
+      <skills-container />
+    </lazy-loader>
+  </div>
+  <div class="container-fluid" id="projects">
+    <div class="row mt-5 mb-5">
       <div class="offset-xxl-1 col-12 col-md-10 text-start">
         <h3>Projects</h3>
       </div>
@@ -96,6 +98,7 @@ import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
 
 <style lang="scss">
 .home {
+  min-height: 100vh;
   .overlay {
     display: block;
     position: fixed;
@@ -108,6 +111,7 @@ import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
   }
 
   .mouse {
+    margin-top: 10rem !important;
     color: $primary;
     .mouse-scroll-container {
       align-content: center;
@@ -122,5 +126,11 @@ import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
       color: blue !important;
     }
   }
+}
+#skills {
+  min-height: 96vh;
+  align-content: center;
+  background: url("../assets/skills_bg2.png") lightgray -0.286px 0px / 100.03% 137.19%
+    no-repeat;
 }
 </style>

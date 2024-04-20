@@ -69,6 +69,7 @@ const skills = ["Vue.js", "React", "C#", "C/C++"];
   background-color: $primary;
   filter: drop-shadow(-4px -4px 2px $secondary);
   padding: 15px;
+  min-height: 45vh;
 
   .img-cropped {
     margin-top: 20px;
