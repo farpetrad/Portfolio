@@ -31,7 +31,7 @@
       <div class="offset-xxl-1 col-12 col-md-10 text-start">
         <h4>Splinterlands</h4>
       </div>
-      <div class="offset-xxl-1 col-12 col-md-4 text-start project-asset">
+      <div class="offset-xxl-1 col-12 col-md-4 text-start">
         <p>
           Splinterlands is a web3 online collectible card game on the Hive
           blockchain. Every card in the game in the game is a non fungible token
@@ -56,17 +56,14 @@
           similar approach was taken with the back end. The origional code was
           written using Javascript running on an Express.js server on node.js,
           however existing code was not going to be re-wrriten. Instead a new
-          back end server written in Next.js was created for new rest apis and
-          microservices. New block processing code was written also written in
-          Next.js and TypeScript and built into npm packages that would be
+          back end server written in Next.js was created for new microservice
+          based REST apis . New block processing code was written also written
+          in Next.js and TypeScript and built into npm packages that would be
           consumed by the existing Express.js server.
         </p>
       </div>
-      <div class="col-6 project-asset">
-        <img
-          src="../assets/splinterlands.png"
-          class="img-fluid project-asset"
-        />
+      <div class="col-12 col-md-6">
+        <img src="../assets/splinterlands.png" class="img-fluid" />
       </div>
     </div>
   </div>
