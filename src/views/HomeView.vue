@@ -33,12 +33,27 @@
       </div>
       <div class="offset-xxl-1 col-12 col-md-4 text-start">
         <p>
-          Splinterlands is a web3 online collectible card game on the Hive
-          blockchain. Every card in the game in the game is a non fungible token
-          (NFT) and can be traded or sold in online markets. Splinterlands takes
+          <a href="https://splinterlands.com" rel="noreferrer" target="_blank"
+            >Splinterlands</a
+          >
+          is a web3 online collectible card game on the Hive blockchain. Every
+          card in the game in the game is a
+          <a
+            href="https://en.wikipedia.org/wiki/Non-fungible_token"
+            target="_blank"
+            rel="noreferrer"
+            >non fungible token (NFT)</a
+          >
+          and can be traded or sold in online markets. Splinterlands takes
           places in a fantasy world on the continent of Praetoria. In the game
           players auto battle each other under random rulesets and splinters
-          (colors) to earn the in game governance token splintershards (SPS).
+          (colors) to earn the in game governance token
+          <a
+            href="https://sps.splinterlands.com/"
+            target="_blank"
+            rel="noreferrer"
+            >splintershards (SPS)</a
+          >.
         </p>
         <p>
           When I started at Steemmonsters corp working on Splinterlaneds the
@@ -49,7 +64,8 @@
           all existing pages and creating new pages for the Land expansion in
           React, TypeScript and Stiches for styling. This was an almost two year
           long project that has resulted in the legacy site being retired other
-          than the actual battles.
+          than the actual battles page which is writtten in WebGL through
+          <a href="Pixel.js" rel="noreferrer" target="blank">Pixel.js.</a>
         </p>
         <p>
           In addition to the front end being redone in a modern framework, a
@@ -99,6 +115,11 @@ import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
         width: 80px;
         height: 80px;
       }
+    }
+  }
+  p {
+    a {
+      color: blue !important;
     }
   }
 }
