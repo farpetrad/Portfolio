@@ -2,7 +2,7 @@
   <div class="offset-1 col-10 text-start">
     <h3>Skills</h3>
   </div>
-  <div class="offset-xxl-1 col-sm-12 col-xxl-5 text-start mt-2">
+  <div class="offset-xxl-1 col-12 col-xxl-5 text-start mt-2 p-0">
     <div class="row">
       <div class="offset-1 offset-md-0 col-10">
         <h4>Technologies</h4>
@@ -32,7 +32,7 @@
       </div>
     </template>
   </div>
-  <div class="offset-0 offset-xxl-1 col-sm-12 col-xxl-5 text-start mt-2">
+  <div class="offset-0 offset-xxl-1 col-12 col-xxl-5 text-start mt-2 p-0">
     <div class="row">
       <div class="offset-1 offset-md-0 col-10">
         <h4>Languages</h4>
