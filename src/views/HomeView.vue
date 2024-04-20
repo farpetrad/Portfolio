@@ -1,10 +1,10 @@
 <template>
   <div class="home container-fluid sitepage">
     <div class="row mt-5">
-      <div class="offset-sm-1 offset-xxl-2 col-sm-10 col-md-4 col-xxl-2">
+      <div class="offset-sm-1 col-sm-10 col-md-4 col-xxl-2">
         <about-box />
       </div>
-      <div class="col-sm-10 col-md-4 text-start">
+      <div class="col-10 col-md-6 text-start">
         <headline-box />
       </div>
       <div class="col-sm-10 offset-sm-1 offset-xxl-0 col-md-4 col-xxl-2">
