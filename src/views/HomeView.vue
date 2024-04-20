@@ -37,7 +37,7 @@
             >Splinterlands</a
           >
           is a web3 online collectible card game on the Hive blockchain. Every
-          card in the game in the game is a
+          card in the game is a
           <a
             href="https://en.wikipedia.org/wiki/Non-fungible_token"
             target="_blank"
