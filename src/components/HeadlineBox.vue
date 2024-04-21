@@ -20,7 +20,10 @@
   align-content: center;
   padding: 2rem;
   h1 {
-    font-weight: bold;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
     span.name {
       color: $secondary;
     }
@@ -32,7 +35,18 @@
   }
   .code {
     color: $primary;
-    font-weight: bold;
+    font-family: Consolas;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+  }
+  p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
   }
 }
 

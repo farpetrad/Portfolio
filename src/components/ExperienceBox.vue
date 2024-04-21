@@ -2,22 +2,22 @@
   <div class="experience-box">
     <div class="experience-container">
       <div class="row">
-        <div class="col-sm-12 col-xxl-4">
+        <div class="col-12 col-md-4">
           <h4>4</h4>
         </div>
-        <div class="col-sm-12 col-xxl-8 highlight">Programming Languages</div>
+        <div class="col-12 col-md-8 highlight">Programming Languages</div>
       </div>
       <div class="row">
-        <div class="col-sm-12 col-xxl-4">
+        <div class="col-12 col-md-4">
           <h4>6</h4>
         </div>
-        <div class="col-sm-12 col-xxl-8 highlight">Development Tools</div>
+        <div class="col-12 col-md-8 highlight">Development Tools</div>
       </div>
       <div class="row">
-        <div class="col-sm-12 col-xxl-4 p-0">
+        <div class="col-12 col-md-4 p-0">
           <h4>16</h4>
         </div>
-        <div class="col-sm-12 col-xxl-8 highlight">Years of Experience</div>
+        <div class="col-12 col-md-8 highlight">Years of Experience</div>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
     width: 100%;
     height: 100%;
     border-radius: 40px;
-    padding: 5rem 3rem 5rem 3rem;
+    padding: 5rem 2rem 5rem 2rem;
 
     h4 {
       font-family: "Open Sans";
