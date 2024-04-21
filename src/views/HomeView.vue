@@ -26,64 +26,9 @@
     </lazy-loader>
   </div>
   <div class="container-fluid" id="projects">
-    <div class="row mt-5 mb-5">
-      <div class="offset-xxl-1 col-12 col-md-10 text-start">
-        <h3>Projects</h3>
-      </div>
-      <div class="offset-xxl-1 col-12 col-md-10 text-start">
-        <h4>Splinterlands</h4>
-      </div>
-      <div class="offset-xxl-1 col-12 col-md-4 text-start">
-        <p>
-          <a href="https://splinterlands.com" rel="noreferrer" target="_blank"
-            >Splinterlands</a
-          >
-          is a web3 online collectible card game on the Hive blockchain. Every
-          card in the game is a
-          <a
-            href="https://en.wikipedia.org/wiki/Non-fungible_token"
-            target="_blank"
-            rel="noreferrer"
-            >non fungible token (NFT)</a
-          >
-          and can be traded or sold in online markets. Splinterlands takes
-          places in a fantasy world on the continent of Praetoria. In the game
-          players auto battle each other under random rulesets and splinters
-          (colors) to earn the in game governance token
-          <a
-            href="https://sps.splinterlands.com/"
-            target="_blank"
-            rel="noreferrer"
-            >splintershards (SPS)</a
-          >.
-        </p>
-        <p>
-          When I started at Steemmonsters corp working on Splinterlaneds the
-          website was designed using custom css, vanilla javascript and jQuery.
-          After a few months a new project called v-next, was kicked off. This
-          project was to replace the site with a modern web framework, React and
-          TypeScript. From there until April 2024 I worked on a team converting
-          all existing pages and creating new pages for the Land expansion in
-          React, TypeScript and Stiches for styling. This was an almost two year
-          long project that has resulted in the legacy site being retired other
-          than the actual battles page which is writtten in WebGL through
-          <a href="Pixel.js" rel="noreferrer" target="blank">Pixel.js.</a>
-        </p>
-        <p>
-          In addition to the front end being redone in a modern framework, a
-          similar approach was taken with the back end. The origional code was
-          written using Javascript running on an Express.js server on node.js,
-          however existing code was not going to be re-wrriten. Instead a new
-          back end server written in Next.js was created for new microservice
-          based REST apis . New block processing code was written also written
-          in Next.js and TypeScript and built into npm packages that would be
-          consumed by the existing Express.js server.
-        </p>
-      </div>
-      <div class="col-12 col-md-6">
-        <img src="../assets/splinterlands.png" class="img-fluid" />
-      </div>
-    </div>
+    <lazy-loader :min-height="300" :unrender="true" class="row p-0">
+      <projects-container />
+    </lazy-loader>
   </div>
 </template>
 
@@ -92,6 +37,7 @@ import AboutBox from "@/components/AboutBox.vue";
 import ExperienceBox from "@/components/ExperienceBox.vue";
 import HeadlineBox from "@/components/HeadlineBox.vue";
 import SkillsContainer from "@/components/SkillsContainer.vue";
+import ProjectsContainer from "@/components/ProjectsContainer.vue";
 import LazyLoader from "@/components/LazyLoader.vue";
 import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
 </script>
@@ -132,5 +78,10 @@ import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
   align-content: center;
   background: url("../assets/skills_bg2.png") lightgray -0.286px 0px / 100.03% 137.19%
     no-repeat;
+}
+#projects {
+  min-height: 96vh;
+  background-color: $primary;
+  color: #ffffff;
 }
 </style>
