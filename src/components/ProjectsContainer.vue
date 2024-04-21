@@ -1,6 +1,6 @@
 <template>
   <div class="row mt-5 mb-5">
-    <div class="offset-xxl-1 col-12 col-md-10 text-start mt-5">
+    <div class="offset-1 col-10 text-start mt-5">
       <h2>Featured Projects</h2>
       <p>
         Here are some of the selected projects that showcase my passion for
@@ -9,10 +9,12 @@
     </div>
   </div>
   <div class="row mt-5">
-    <div class="offset-1 col-10 col-md-4 project-img">
+    <div class="offset-1 col-10 col-xxl-4 project-img">
       <img src="../assets/splinterlands.png" class="img-fluid" />
     </div>
-    <div class="offset-1 col-10 col-md-6 project-description text-start">
+    <div
+      class="offset-1 col-10 col-xxl-6 mt-3 mt-xxl-0 project-description text-start"
+    >
       <h3>Splinterlands</h3>
       <p>
         Worked with a team of developers to re-write a jQuery website in React,
@@ -25,8 +27,8 @@
         <div class="col-12"><h4>Project Info</h4></div>
       </div>
       <div class="row mx-auto project-info mt-4">
-        <div class="col-10 p-0">Year</div>
-        <div class="col-2 text-end">2022 - 2024</div>
+        <div class="col-6 p-0">Year</div>
+        <div class="col-6 text-end">2022 - 2024</div>
       </div>
       <div class="row mx-auto project-info mt-4">
         <div class="col-6 p-0">Role</div>
