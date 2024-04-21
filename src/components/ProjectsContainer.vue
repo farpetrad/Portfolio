@@ -43,11 +43,12 @@ const projects: ProjectItemProps[] = [
     projectLink: "https://splinterlands.com",
   },
   {
-    name: "Pulte Mortgage Login",
+    name: "Pulte Mortgage Login and Secure sites",
     description: `Architectured and created login site (login.pultemortgage.com) and the 
         secure sites hidden behind the login, the MyLoan dashboard (secure.pultemortgage.com) 
-        and the Loan Questionnaire site (start.pultemortgage.com) using Vue.js 2, vue-router and vuex.
-        In addition designed and architectured REST based microservices using .NET Core and GraphQL`,
+        and the Loan Questionnaire (start.pultemortgage.com) using Vue.js 2, vue-router and vuex
+        on the front end, in addition to designing and architecturing REST based microservices using 
+        .NET Core, MS SQLServer and GraphQL on the back end`,
     year: "2018 - 2020",
     role: "Digital Customer Experience .NET Solutions Architect and Lead Vue.js Developer",
     img: require("../assets/login_pulte_mortgage.png"),
