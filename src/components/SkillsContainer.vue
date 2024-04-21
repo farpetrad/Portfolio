@@ -10,7 +10,7 @@
         </div>
       </div>
       <template v-for="(itemRow, index) in technologies" :key="index">
-        <div :class="{ row: true, 'mt-3': index > 0 }">
+        <div :class="{ row: true, 'mt-5': index > 0 }">
           <div
             v-for="(skill, skillIndex) in itemRow"
             :key="`${skillIndex}-skill.skillText`"
@@ -40,7 +40,7 @@
         </div>
       </div>
       <template v-for="(itemRow, index) in languages" :key="index">
-        <div :class="{ row: true, 'mt-3': index > 0 }">
+        <div :class="{ row: true, 'mt-5': index > 0 }">
           <div
             v-for="(skill, skillIndex) in itemRow"
             :key="`${skillIndex}-skill.skillText`"

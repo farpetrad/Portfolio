@@ -52,7 +52,7 @@ const projects: ProjectItemProps[] = [
     year: "2018 - 2020",
     role: "Digital Customer Experience .NET Solutions Architect and Lead Vue.js Developer",
     img: require("../assets/login_pulte_mortgage.png"),
-    projectLink: "https://login.pultemortgageg.com",
+    projectLink: "https://login.pultemortgage.com/",
   },
 ];
 </script>
