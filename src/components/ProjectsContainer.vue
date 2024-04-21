@@ -8,7 +8,11 @@
       </p>
     </div>
   </div>
-  <div class="row mt-5" v-for="(project, index) in projects" :key="index">
+  <div
+    :class="{ 'row mt-5': true, 'mb-5': index === projects.length - 1 }"
+    v-for="(project, index) in projects"
+    :key="index"
+  >
     <project-box
       :name="project.name"
       :description="project.description"
@@ -16,6 +20,8 @@
       :role="project.role"
       :img="project.img"
       :project-link="project.projectLink"
+      :codepen-link="project.codepenLink"
+      :github-link="project.githubLink"
     />
   </div>
 </template>
@@ -35,6 +41,17 @@ const projects: ProjectItemProps[] = [
     role: "Full-Stack Developer / Architect",
     img: require("../assets/splinterlands.png"),
     projectLink: "https://splinterlands.com",
+  },
+  {
+    name: "Pulte Mortgage Login",
+    description: `Architectured and created login site (login.pultemortgage.com) and the 
+        secure sites hidden behind the login, the MyLoan dashboard (secure.pultemortgage.com) 
+        and the Loan Questionnaire site (start.pultemortgage.com) using Vue.js 2, vue-router and vuex.
+        In addition designed and architectured REST based microservices using .NET Core and GraphQL`,
+    year: "2018 - 2020",
+    role: "Digital Customer Experience .NET Solutions Architect and Lead Vue.js Developer",
+    img: require("../assets/login_pulte_mortgage.png"),
+    projectLink: "https://login.pultemortgageg.com",
   },
 ];
 </script>

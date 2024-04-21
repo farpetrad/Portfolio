@@ -1,6 +1,6 @@
 <template>
   <div class="offset-1 col-10 col-xxl-4 project-img">
-    <img src="../assets/splinterlands.png" class="img-fluid" />
+    <img :src="img" class="img-fluid" />
   </div>
   <div
     class="offset-1 col-10 col-xxl-6 mt-3 mt-xxl-0 project-description text-start"
@@ -20,21 +20,28 @@
       <div class="col-6 p-0">Role</div>
       <div class="col-6 text-end">{{ role }}</div>
     </div>
-    <div class="row project-links mb-5">
+    <div class="d-flex project-links mb-5">
       <a :href="projectLink" target="_blank" rel="noreferrer" v-if="projectLink"
         >View Project <img src="../assets/arrow.svg" alt="arrow up right"
+      /></a>
+      <a :href="codepenLink" target="_blank" rel="noreferrer" v-if="codepenLink"
+        >Live Demo <img src="../assets/arrow.svg" alt="arrow up right"
+      /></a>
+      <a :href="githubLink" target="_blank" rel="noreferrer" v-if="githubLink"
+        >See on GitHub <font-awesome-icon :icon="faGithub"
       /></a>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ProjectItemProps from "@/types/ProjectItemProps";
 import { defineProps } from "vue";
 defineProps<ProjectItemProps>();
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .project-img {
   padding: 5rem;
   justify-content: center;
@@ -59,6 +66,9 @@ defineProps<ProjectItemProps>();
       font-style: normal;
       font-weight: 700;
       line-height: 150%;
+      margin-right: 2rem;
+      text-decoration: none;
+      border-bottom: 1px solid $secondary;
     }
   }
 }
