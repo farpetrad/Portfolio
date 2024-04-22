@@ -55,7 +55,7 @@ function next() {
   moveLeft();
   afterTransition(() => {
     if (!model.value || !model.value.length) return;
-    const card = model.value.shift();
+    const card = model.value.shift() as string;
     model.value.push(card);
     resetTranslate();
     transitioning.value = false;
@@ -69,7 +69,7 @@ function prev() {
   moveRight();
   afterTransition(() => {
     if (!model.value || !model.value.length) return;
-    const card: string = model.value.pop();
+    const card: string = model.value.pop() as string;
     if (card) {
       model.value.unshift(card);
     }
