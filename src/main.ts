@@ -28,6 +28,4 @@ const app = createApp(App)
   .component("nav-bar", NavBarComponent);
 app.mount("#app");
 
-app.config.performance = true;
-
 dom.watch();
