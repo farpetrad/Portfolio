@@ -1,7 +1,7 @@
 <template>
   <div class="carousel">
     <div ref="inner" :style="innerStyles" class="inner">
-      <div v-for="(card, index) in images" :key="index" class="card">
+      <div v-for="(card, index) in model" :key="index" class="card">
         <img :src="card" class="img-fluid" />
       </div>
     </div>
@@ -13,14 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, defineProps, watch } from "vue";
+import { ref, onMounted, watch, defineModel } from "vue";
 import CarouselItemProps from "@/types/CarouselItemProps";
+const model = defineModel();
 
-const props = defineProps<CarouselItemProps>();
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-watch(props, (newValue: CarouselItemProps, oldValue: CarouselItemProps) => {
-  setStep();
+watch(model, (newValue: CarouselItemProps, oldValue: CarouselItemProps) => {
+  if (newValue.length !== oldValue.length) setStep();
 });
 
 const innerStyles = ref({});
@@ -30,7 +28,7 @@ const inner = ref(null);
 
 function setStep() {
   const innerWidth = inner.value.scrollWidth;
-  const totalCards = props.images.length;
+  const totalCards = model.value.length;
   step.value = `${innerWidth / totalCards}px`;
 }
 
@@ -40,10 +38,8 @@ function next() {
 
   moveLeft();
   afterTransition(() => {
-    // eslint-disable-next-line vue/no-mutating-props
-    const card = props.images.shift();
-    // eslint-disable-next-line vue/no-mutating-props
-    props.images.push(card);
+    const card = model.value.shift();
+    model.value.push(card);
     resetTranslate();
     transitioning.value = false;
   });
@@ -55,10 +51,8 @@ function prev() {
 
   moveRight();
   afterTransition(() => {
-    // eslint-disable-next-line vue/no-mutating-props
-    const card = props.images.pop();
-    // eslint-disable-next-line vue/no-mutating-props
-    props.images.unshift(card);
+    const card = model.value.pop();
+    model.value.unshift(card);
     resetTranslate();
     transitioning.value = false;
   });

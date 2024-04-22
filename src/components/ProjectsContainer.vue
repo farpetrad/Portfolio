@@ -11,7 +11,7 @@
         <div class="container-fluid modal-body">
           <div class="row">
             <div class="col-12 carousel-container">
-              <CarouselComponent :images="selectedProject?.slides ?? []" />
+              <CarouselComponent v-model="slides" />
             </div>
           </div>
         </div>
@@ -47,12 +47,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, Ref, provide, readonly } from "vue";
+import { ref, Ref, provide, computed } from "vue";
 import ProjectItemProps from "@/types/ProjectItemProps";
+import CarouselItemProps from "@/types/CarouselItemProps";
 import ProjectBox from "./ProjectBox.vue";
 import CarouselComponent from "./CarouselComponent.vue";
 
 const selectedProject: Ref<ProjectItemProps | null> = ref(null);
+const slides = computed<CarouselItemProps>(() => {
+  if (!selectedProject.value) return [];
+  return selectedProject.value.slides;
+});
 const showModal = ref(false);
 provide("selectedProject", selectedProject);
 const projects: ProjectItemProps[] = [
