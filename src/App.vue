@@ -27,8 +27,8 @@ import NavItemTextProps from "@/types/NavItemProps";
 const navItems: NavItemTextProps[] = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "#about-me", label: "About" },
+  { href: "#contact", label: "Contact" },
   {
     href: "https://www.linkedin.com/in/neal-c-2749305b/",
     label: "LinkedIn",
