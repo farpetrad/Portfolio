@@ -1,4 +1,23 @@
 <template>
+  <teleport to="#target" :disabled="!showModal">
+    <modal
+      v-show="selectedProject !== null"
+      @close="closeModal"
+      :dismissOnClick="true"
+      class="text-center"
+    >
+      <template v-slot:header> {{ selectedProject?.name ?? "" }} </template>
+      <template v-slot:body>
+        <div class="container-fluid modal-body">
+          <div class="row">
+            <div class="col-12 carousel-container">
+              <CarouselComponent :images="selectedProject?.slides ?? []" />
+            </div>
+          </div>
+        </div>
+      </template>
+    </modal>
+  </teleport>
   <div class="row mt-5 mb-5">
     <div class="offset-1 col-10 text-start mt-5">
       <h2>Featured Projects</h2>
@@ -22,13 +41,20 @@
       :project-link="project.projectLink"
       :codepen-link="project.codepenLink"
       :github-link="project.githubLink"
+      :slides="project.slides"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref, Ref, provide, readonly } from "vue";
 import ProjectItemProps from "@/types/ProjectItemProps";
 import ProjectBox from "./ProjectBox.vue";
+import CarouselComponent from "./CarouselComponent.vue";
+
+const selectedProject: Ref<ProjectItemProps | null> = ref(null);
+const showModal = ref(false);
+provide("selectedProject", selectedProject);
 const projects: ProjectItemProps[] = [
   {
     name: "Splinterlands",
@@ -41,6 +67,15 @@ const projects: ProjectItemProps[] = [
     role: "Full-Stack Developer / Architect",
     img: require("../assets/splinterlands.png"),
     projectLink: "https://splinterlands.com",
+    slides: [
+      require("../assets/splinterlands.png"),
+      require("../assets/splinterlands2.png"),
+      require("../assets/splinterlands3.png"),
+      require("../assets/splinterlands4.png"),
+      require("../assets/splinterlands5.png"),
+      require("../assets/splinterlands6.png"),
+      require("../assets/splinterlands7.png"),
+    ],
   },
   {
     name: "Pulte Mortgage Login and Secure sites",
@@ -53,6 +88,34 @@ const projects: ProjectItemProps[] = [
     role: "Digital Customer Experience .NET Solutions Architect and Lead Vue.js Developer",
     img: require("../assets/login_pulte_mortgage.png"),
     projectLink: "https://login.pultemortgage.com/",
+    slides: [
+      require("../assets/login_pulte_mortgage.png"),
+      require("../assets/myloan_dashboard.png"),
+      require("../assets/myloan_dashboard2.png"),
+      require("../assets/myloan_dashboard3.png"),
+      require("../assets/loanquestionnaire.png"),
+      require("../assets/loanquestionnaire2.png"),
+    ],
   },
 ];
+
+function closeModal() {
+  showModal.value = false;
+  selectedProject.value = null;
+}
 </script>
+
+<style lang="scss">
+.modal-body {
+  overflow: hidden;
+  .carousel-container {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 35vh;
+  }
+}
+</style>

@@ -1,5 +1,8 @@
 <template>
-  <div class="offset-1 col-10 col-xxl-4 project-img">
+  <div
+    class="offset-1 col-10 col-xxl-4 project-img"
+    @click="doShowProjectModal"
+  >
     <img :src="img" class="img-fluid" />
   </div>
   <div
@@ -37,8 +40,14 @@
 <script lang="ts" setup>
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import ProjectItemProps from "@/types/ProjectItemProps";
-import { defineProps } from "vue";
-defineProps<ProjectItemProps>();
+import { defineProps, inject, Ref } from "vue";
+
+let project = inject<Ref<ProjectItemProps>>("selectedProject");
+const props = defineProps<ProjectItemProps>();
+
+function doShowProjectModal() {
+  project.value = props;
+}
 </script>
 
 <style lang="scss" scoped>

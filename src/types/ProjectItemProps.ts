@@ -7,6 +7,7 @@ type ProjectItemProps = {
   projectLink?: string;
   codepenLink?: string;
   githubLink?: string;
+  slides: string[];
 };
 
 export default ProjectItemProps;

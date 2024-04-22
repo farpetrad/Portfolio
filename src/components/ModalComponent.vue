@@ -117,6 +117,7 @@ export default defineComponent({
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease;
+  color: black;
 
   .modal-wrapper {
     width: 100%;
