@@ -6,7 +6,9 @@
       :dismissOnClick="true"
       class="text-center"
     >
-      <template v-slot:header> {{ selectedProject?.name ?? "" }} </template>
+      <template v-slot:header>
+        <h4>{{ selectedProject?.name ?? "" }}</h4>
+      </template>
       <template v-slot:body>
         <div class="container-fluid modal-body">
           <div class="row">
@@ -49,12 +51,11 @@
 <script lang="ts" setup>
 import { ref, Ref, provide, computed } from "vue";
 import ProjectItemProps from "@/types/ProjectItemProps";
-import CarouselItemProps from "@/types/CarouselItemProps";
 import ProjectBox from "./ProjectBox.vue";
 import CarouselComponent from "./CarouselComponent.vue";
 
 const selectedProject: Ref<ProjectItemProps | null> = ref(null);
-const slides = computed<CarouselItemProps>(() => {
+const slides = computed<string[]>(() => {
   if (!selectedProject.value) return [];
   return selectedProject.value.slides;
 });

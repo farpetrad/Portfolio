@@ -46,7 +46,7 @@ let project = inject<Ref<ProjectItemProps>>("selectedProject");
 const props = defineProps<ProjectItemProps>();
 
 function doShowProjectModal() {
-  project.value = props;
+  if (project) project.value = props;
 }
 </script>
 
@@ -56,6 +56,7 @@ function doShowProjectModal() {
   justify-content: center;
   align-items: center;
   background-color: #343a40;
+  cursor: pointer;
   img {
     border-radius: 12px;
     border: 1px solid black;

@@ -7,26 +7,42 @@
     </div>
   </div>
   <div class="carousel-nav">
-    <button @click="prev">prev</button>
-    <button @click="next">next</button>
+    <font-awesome-icon
+      @click="prev"
+      :icon="faCircleArrowLeft"
+      size="3x"
+      style="color: #193154"
+      class="me-2 carousel-btn"
+    />
+    <font-awesome-icon
+      @click="next"
+      :icon="faCircleArrowRight"
+      size="3x"
+      style="color: #193154"
+      class="ms-2 carousel-btn"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch, defineModel } from "vue";
-import CarouselItemProps from "@/types/CarouselItemProps";
-const model = defineModel();
+import { ref, Ref, onMounted, watch, defineModel } from "vue";
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight,
+} from "@fortawesome/pro-regular-svg-icons";
+const model = defineModel<string[]>();
 
-watch(model, (newValue: CarouselItemProps, oldValue: CarouselItemProps) => {
+watch(model, (newValue: string[], oldValue: string[]) => {
   if (newValue.length !== oldValue.length) setStep();
 });
 
 const innerStyles = ref({});
 const step = ref("");
 const transitioning = ref(false);
-const inner = ref(null);
+const inner: Ref<HTMLDivElement | null> = ref(null);
 
 function setStep() {
+  if (!inner.value || !model.value) return;
   const innerWidth = inner.value.scrollWidth;
   const totalCards = model.value.length;
   step.value = `${innerWidth / totalCards}px`;
@@ -38,6 +54,7 @@ function next() {
 
   moveLeft();
   afterTransition(() => {
+    if (!model.value || !model.value.length) return;
     const card = model.value.shift();
     model.value.push(card);
     resetTranslate();
@@ -51,8 +68,11 @@ function prev() {
 
   moveRight();
   afterTransition(() => {
-    const card = model.value.pop();
-    model.value.unshift(card);
+    if (!model.value || !model.value.length) return;
+    const card: string = model.value.pop();
+    if (card) {
+      model.value.unshift(card);
+    }
     resetTranslate();
     transitioning.value = false;
   });
@@ -72,11 +92,13 @@ function moveRight() {
   };
 }
 
-function afterTransition(callback) {
+function afterTransition(callback: () => void) {
   const listener = () => {
     callback();
+    if (!inner.value) return;
     inner.value.removeEventListener("transitionend", listener);
   };
+  if (!inner.value) return;
   inner.value.addEventListener("transitionend", listener);
 }
 
@@ -121,9 +143,9 @@ onMounted(() => {
 .carousel-nav {
   display: flex;
   flex-direction: row;
-  button {
-    margin-right: 5px;
-    margin-top: 10px;
+  position: relative;
+  .carousel-btn {
+    cursor: pointer;
   }
 }
 </style>
