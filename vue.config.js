@@ -14,7 +14,7 @@ module.exports = defineConfig({
   chainWebpack: (config) => {
     config.plugin("define").tap((definitions) => {
       Object.assign(definitions[0], {
-        __VUE_PROD_DEVTOOLS__: "true",
+        __VUE_PROD_DEVTOOLS__: true,
       });
       return definitions;
     });
