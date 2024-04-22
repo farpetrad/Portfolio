@@ -33,10 +33,10 @@
   <div class="container-fluid" id="about-me">
     <lazy-loader :min-height="300" :unrender="true" class="row p-0">
       <div class="row about-me-container">
-        <div class="col-12 offset-md-1 col-md-4">
+        <div class="col-10 offset-1 col-md-4">
           <h2>ABOUT ME</h2>
         </div>
-        <div class="col-12 col-md-6 text-start">
+        <div class="col-10 offset-1 offset-md-0 col-md-6 text-start">
           <p class="about-me-highlight">
             I am a Full-Stack developer based in Denver, Colorado. I have a
             diverse background across financial, travel, gaming and governement
