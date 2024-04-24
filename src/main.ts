@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import emailjs from "@emailjs/browser";
 
 import {
   FontAwesomeIcon,
@@ -27,5 +28,15 @@ const app = createApp(App)
   .component("font-awesome-layers-text", FontAwesomeLayersText)
   .component("nav-bar", NavBarComponent);
 app.mount("#app");
+
+emailjs.init({
+  publicKey: "H9Q_MLeDPDcmU1O5G",
+  limitRate: {
+    // Set the limit rate for the application
+    id: "myportfolio",
+    // Allow 1 request per 60s
+    throttle: 60000,
+  },
+});
 
 dom.watch();

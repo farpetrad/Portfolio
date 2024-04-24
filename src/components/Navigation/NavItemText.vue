@@ -1,6 +1,6 @@
 <template>
   <div class="nav-item" id="nav-item">
-    <router-link v-if="isInternalLink" :to="link.href">
+    <router-link v-if="isInternalLink" :to="link.href" tabindex="0">
       <slot>{{ link.label }}</slot>
     </router-link>
     <a
@@ -8,6 +8,7 @@
       :href="link.href"
       :target="link.target ?? '_blank'"
       rel="noreferrer"
+      tabindex="0"
     >
       <slot>{{ link.label }}</slot>
     </a>
