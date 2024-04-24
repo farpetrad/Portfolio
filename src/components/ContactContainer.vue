@@ -5,26 +5,44 @@
         <div class="mb-3">
           <h3>CONTACT&nbsp;ME</h3>
         </div>
-        <form @submit.prevent="sendEmail">
+        <form @submit.prevent="sendEmail" novalidate>
           <div class="mb-3">
             <label for="name-input" class="form-label">Name:</label>
             <input
               id="name-input"
               type="text"
               class="form-control"
-              v-model="name"
+              v-model="formData.name"
               tabindex="0"
             />
+            <div class="error-container">
+              <span
+                v-for="(error, index) in v$.name.$errors"
+                :key="index"
+                style="min-height: 24px"
+              >
+                {{ error.$message }}
+              </span>
+            </div>
           </div>
           <div class="mb-3">
             <label for="email-input" class="form-label">Email Address:</label>
             <input
               id="email-input"
-              type="text"
+              type="email"
               class="form-control"
-              v-model="email"
+              v-model="formData.email"
               tabindex="0"
             />
+            <div class="error-container">
+              <span
+                v-for="(error, index) in v$.email.$errors"
+                :key="index"
+                style="min-height: 24px"
+              >
+                {{ error.$message }}
+              </span>
+            </div>
           </div>
           <div class="mb-3">
             <label for="message-input" class="form-label">Message:</label>
@@ -32,9 +50,18 @@
               id="message-input"
               type="text"
               class="form-control"
-              v-model="message"
+              v-model="formData.message"
               tabindex="0"
             />
+            <div class="error-container">
+              <span
+                v-for="(error, index) in v$.message.$errors"
+                :key="index"
+                style="min-height: 24px"
+              >
+                {{ error.$message }}
+              </span>
+            </div>
           </div>
           <div class="mb-3">
             <button
@@ -103,28 +130,45 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, Ref } from "vue";
+import { ref, computed } from "vue";
 import emailjs from "@emailjs/browser";
+import useVuelidate from "@vuelidate/core";
+import { required, email } from "@vuelidate/validators";
 
-const name: Ref<string> = ref("");
-const email: Ref<string> = ref("");
-const message: Ref<string> = ref("");
-function sendEmail() {
-  emailjs
-    .send("service_6u53oyk", "template_1afiqxa", {
-      to_name: "Neal",
-      from_name: name.value,
-      from_email: email.value,
-      message: message.value,
-    })
-    .then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-      },
-      (error) => {
-        console.log("FAILED...", error);
-      }
-    );
+const formData = ref({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const rules = computed(() => {
+  return {
+    name: { required },
+    email: { required, email },
+    message: { required },
+  };
+});
+const v$ = useVuelidate(rules, formData);
+
+async function sendEmail() {
+  const result = await v$.value.$validate();
+  if (result) {
+    emailjs
+      .send("service_6u53oyk", "template_1afiqxa", {
+        to_name: "Neal",
+        from_name: formData.value.name,
+        from_email: formData.value.email,
+        message: formData.value.message,
+      })
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
+  }
 }
 </script>
 
@@ -160,6 +204,11 @@ function sendEmail() {
         background-color: $primary;
         color: #ffffff;
         max-width: 13rem;
+      }
+      .error-container {
+        color: red;
+        min-height: 24px;
+        text-align: left;
       }
     }
     .code-container {
