@@ -74,6 +74,10 @@
             </button>
           </div>
         </form>
+        <div class="mb-3" v-if="success">Message successfully sent.</div>
+        <div class="mb-3" v-if="error">
+          Message failed to send. {{ errorMsg }}
+        </div>
       </div>
       <div class="col-10 offset-1 offset-xxl-0 col-xxl-5 p-0">
         <div class="code-container row mx-auto text-start">
@@ -130,7 +134,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { ref, Ref, computed } from "vue";
 import emailjs from "@emailjs/browser";
 import useVuelidate from "@vuelidate/core";
 import { required, email } from "@vuelidate/validators";
@@ -140,6 +144,9 @@ const formData = ref({
   email: "",
   message: "",
 });
+const success: Ref<boolean> = ref(false);
+const error: Ref<boolean> = ref(false);
+const errorMsg: Ref<string> = ref("");
 
 const rules = computed(() => {
   return {
@@ -151,6 +158,8 @@ const rules = computed(() => {
 const v$ = useVuelidate(rules, formData);
 
 async function sendEmail() {
+  success.value = false;
+  error.value = false;
   const result = await v$.value.$validate();
   if (result) {
     emailjs
@@ -162,10 +171,12 @@ async function sendEmail() {
       })
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+          success.value = response.status === 200;
         },
         (error) => {
-          console.log("FAILED...", error);
+          success.value = false;
+          error.value = true;
+          errorMsg.value = JSON.stringify(error);
         }
       );
   }
