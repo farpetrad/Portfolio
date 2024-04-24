@@ -185,7 +185,7 @@ async function sendEmail() {
 
 <style lang="scss">
 #contact {
-  min-height: 96vh;
+  min-height: 100vh;
   background-color: #ffffff;
   .contact-me-container {
     margin-top: 22rem;

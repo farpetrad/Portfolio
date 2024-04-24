@@ -33,7 +33,7 @@
   <lazy-loader :min-height="300" :unrender="true" class="row p-0">
     <about-container />
   </lazy-loader>
-  <lazy-loader :min-height="300" :unrender="true" class="row p-0 mb-5">
+  <lazy-loader :min-height="300" :unrender="true" class="row p-0">
     <contact-container />
   </lazy-loader>
 </template>

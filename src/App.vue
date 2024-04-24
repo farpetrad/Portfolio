@@ -17,6 +17,7 @@
         </template>
       </nav-bar>
       <router-view></router-view>
+      <footer-component />
     </div>
   </div>
 </template>
@@ -24,6 +25,7 @@
 <script setup lang="ts">
 import NavItemText from "./components/Navigation/NavItemText.vue";
 import NavItemTextProps from "@/types/NavItemProps";
+import FooterComponent from "./components/FooterComponent.vue";
 const navItems: NavItemTextProps[] = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
