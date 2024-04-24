@@ -30,32 +30,9 @@
       <projects-container />
     </lazy-loader>
   </div>
-  <div class="container-fluid" id="about-me">
-    <lazy-loader :min-height="300" :unrender="true" class="row p-0">
-      <div class="row about-me-container mb-5">
-        <div class="col-10 offset-1 col-md-4">
-          <h2>ABOUT ME</h2>
-        </div>
-        <div class="col-10 offset-1 offset-md-0 col-md-5 text-start">
-          <p class="about-me-highlight">
-            I am a Full-Stack developer based in Denver, Colorado looking for
-            exciting opportunities. I have a diverse background across
-            financial, travel, gaming and governement industries.
-          </p>
-          <p>
-            I Have a degree in Game and Simulation programming but have diverse
-            experience from low level C/C++ game development as well as in
-            mission critical systems to higher level C# application and service
-            development to JavaScript/TypeScript experience designing and
-            developing fully responsive websites. I have a strong passion for
-            learning and am always up for a challenge. When not programming I
-            enjoy 3D printing, exploring the great outdoors, reading and
-            satisfying my desire to learn new things.
-          </p>
-        </div>
-      </div>
-    </lazy-loader>
-  </div>
+  <lazy-loader :min-height="300" :unrender="true" class="row p-0">
+    <about-container />
+  </lazy-loader>
   <lazy-loader :min-height="300" :unrender="true" class="row p-0 mb-5">
     <contact-container />
   </lazy-loader>
@@ -67,6 +44,7 @@ import ExperienceBox from "@/components/ExperienceBox.vue";
 import HeadlineBox from "@/components/HeadlineBox.vue";
 import SkillsContainer from "@/components/SkillsContainer.vue";
 import ProjectsContainer from "@/components/ProjectsContainer.vue";
+import AboutContainer from "@/components/AboutContainer.vue";
 import ContactContainer from "@/components/ContactContainer.vue";
 import LazyLoader from "@/components/LazyLoader.vue";
 import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
@@ -113,31 +91,5 @@ import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
   min-height: 96vh;
   background-color: $primary;
   color: #ffffff;
-}
-#about-me {
-  min-height: 96vh;
-  background: url("../assets/AboutMe.png") lightgrey;
-
-  .about-me-container {
-    margin-top: 25rem;
-    h2 {
-      color: $primary;
-      font-family: "Open Sans";
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 120%;
-    }
-    p {
-      color: $primary;
-    }
-    p.about-me-highlight {
-      font-family: "Open Sans";
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: 120%;
-    }
-  }
 }
 </style>
