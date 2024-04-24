@@ -12,7 +12,7 @@
               id="name-input"
               type="text"
               class="form-control"
-              v-ref="name"
+              v-model="name"
               tabindex="0"
             />
           </div>
