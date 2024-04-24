@@ -48,26 +48,54 @@
           </div>
         </form>
       </div>
-      <div class="col-10 offset-1 col-xxl-3">
+      <div class="col-10 offset-1 offset-xxl-0 col-xxl-5 p-0">
         <div class="code-container row mx-auto text-start">
           <span
-            ><span class="number">1.</span>const button =
-            document.querySelector("#sendBtn");</span
+            ><span class="number">1.</span>&emsp;const
+            <span class="highlight">button</span> =
+            <span class="highlight">document.querySelector</span>(<span
+              class="text"
+              >"#sendBtn"</span
+            >);</span
           >
           <span><span class="number">2.</span></span>
-          <span><span class="number">3.</span>const message = {</span>
-          <span><span class="number">4.</span>&emsp;name: "Jon Doe"</span>
-          <span><span class="number">5.</span>&emsp;email: ""</span>
-          <span><span class="number">6.</span>&emsp;message: ""</span>
-          <span><span class="number">7.</span>&emsp;date: "Thu 21 Apr"</span>
-          <span><span class="number">8.</span>};</span>
+          <span
+            ><span class="number">3.</span>&emsp;const
+            <span class="highlight">message</span> = {</span
+          >
+          <span
+            ><span class="number">4.</span>&emsp;&emsp;<span class="highlight"
+              >name</span
+            >: <span class="text">"Jon Doe"</span></span
+          >
+          <span
+            ><span class="number">5.</span>&emsp;&emsp;<span class="highlight"
+              >email</span
+            >: <span class="text">""</span></span
+          >
+          <span
+            ><span class="number">6.</span>&emsp;&emsp;<span class="highlight"
+              >message</span
+            >: <span class="text">""</span></span
+          >
+          <span
+            ><span class="number">7.</span>&emsp;&emsp;<span class="highlight"
+              >date</span
+            >: <span class="text">"Thu 21 Apr"</span></span
+          >
+          <span><span class="number">8.</span>&emsp;};</span>
           <span><span class="number">9.</span></span>
           <span
-            ><span class="number">10.</span>button.addEventListener("click", ()
-            => {</span
+            ><span class="number">10.</span>&emsp;<span class="highlight"
+              >button.addEventListener</span
+            >(<span class="text">"click"</span>, () => {</span
           >
-          <span><span class="number">11.</span>&emsp;form.send(message);</span>
-          <span><span class="number">12.</span>});</span>
+          <span
+            ><span class="number">11.</span>&emsp;&emsp;<span class="highlight"
+              >form.send(message)</span
+            >;</span
+          >
+          <span><span class="number">12.</span>&emsp;});</span>
         </div>
       </div>
     </div>
@@ -137,6 +165,14 @@ function sendEmail() {
     .code-container {
       display: flex;
       flex-direction: column;
+      overflow-x: scroll;
+      span {
+        font-family: Consolas;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+      }
       span.number {
         text-align: right;
         font-family: Consolas;
@@ -144,6 +180,17 @@ function sendEmail() {
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
+      }
+      span.highlight {
+        color: #8540f5;
+      }
+      span.text {
+        color: #d98a02;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      .code-container {
+        overflow-x: hidden;
       }
     }
   }
