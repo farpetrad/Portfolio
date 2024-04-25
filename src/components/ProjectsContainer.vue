@@ -1,7 +1,7 @@
 <template>
   <teleport to="#target" :disabled="!showModal">
     <modal
-      v-show="selectedProject !== null"
+      v-show="selectedProject !== null && slides.length > 0"
       @close="closeModal"
       :dismissOnClick="true"
       class="text-center"
@@ -102,6 +102,17 @@ const projects: ProjectItemProps[] = [
       require("../assets/loanquestionnaire.png"),
       require("../assets/loanquestionnaire2.png"),
     ],
+  },
+  {
+    name: "Pulte Mortgage Articles",
+    description: `Architectured and created a blog site for prospective home buyers using Vue.js 2, vue-router and vuex
+        on the front end.  Articles are delivered to the site through a CMS.`,
+    year: "2018 - 2020",
+    role: "Digital Customer Experience .NET Solutions Architect and Lead Vue.js Developer",
+    img: require("../assets/pulte_articles.png"),
+    projectLink:
+      "https://articles.pultemortgage.com/article/when-a-first-time-buyer-is-also-a-first-time-builder",
+    slides: [],
   },
 ];
 

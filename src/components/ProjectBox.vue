@@ -1,6 +1,7 @@
 <template>
   <div
     class="offset-1 col-10 col-xxl-4 project-img"
+    :style="{ cursor: slides.length > 0 ? 'pointer' : 'initial' }"
     @click="doShowProjectModal"
   >
     <img :src="img" class="img-fluid" />
@@ -56,7 +57,6 @@ function doShowProjectModal() {
   justify-content: center;
   align-items: center;
   background-color: #343a40;
-  cursor: pointer;
   img {
     border-radius: 12px;
     border: 1px solid black;
