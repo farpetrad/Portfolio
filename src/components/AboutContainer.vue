@@ -27,11 +27,11 @@
 
 <style lang="scss">
 #about-me {
-  min-height: 96vh;
+  height: 100vh;
   background: url("../assets/AboutMe.png") lightgrey;
+  align-content: center;
 
   .about-me-container {
-    margin-top: 25rem;
     h2 {
       color: $primary;
       font-family: "Open Sans";

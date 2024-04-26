@@ -186,10 +186,10 @@ async function sendEmail() {
 
 <style lang="scss">
 #contact {
-  min-height: 100vh;
+  height: 100vh;
   background-color: #ffffff;
+  align-content: center;
   .contact-me-container {
-    margin-top: 22rem;
     h3 {
       color: $primary;
       font-family: "Open Sans";
