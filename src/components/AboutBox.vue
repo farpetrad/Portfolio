@@ -9,6 +9,7 @@
       <font-awesome-icon
         :icon="faEnvelope"
         style="color: white; margin-right: 5px"
+        alt="Envelop icon for sending an email"
       />
       <a href="mailto:neal.cynkus@gmail.com">neal.cynkus@gmail.com</a>
     </div>
@@ -16,6 +17,7 @@
       <font-awesome-icon
         :icon="faLocationDot"
         style="color: white; margin-right: 5px"
+        alt="Location marker"
       />
       <span>Denver, Co</span>
     </div>
@@ -23,6 +25,7 @@
       <font-awesome-icon
         :icon="faSuitcase"
         style="color: white; margin-right: 5px"
+        alt="Suitcase Icon"
       />
       <span>Vue / React Full-stack</span>
     </div>
@@ -30,6 +33,7 @@
       <font-awesome-icon
         :icon="faLink"
         style="color: white; margin-right: 5px"
+        alt="Link icon for this sites link"
       />
 
       <a href="https://myportfolio-beta-hazel.vercel.app/"

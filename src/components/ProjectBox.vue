@@ -32,7 +32,8 @@
         >Live Demo <img src="../assets/arrow.svg" alt="arrow up right"
       /></a>
       <a :href="githubLink" target="_blank" rel="noreferrer" v-if="githubLink"
-        >See on GitHub <font-awesome-icon :icon="faGithub"
+        >See on GitHub
+        <font-awesome-icon :icon="faGithub" alt="GitHub icon link to project"
       /></a>
     </div>
   </div>

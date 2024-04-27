@@ -27,6 +27,7 @@
                 :icon="skill.slotContent"
                 size="3x"
                 style="color: #193154"
+                :alt="skill.alt"
               />
             </skill-box>
           </div>
@@ -57,6 +58,7 @@
                 :icon="skill.slotContent"
                 size="3x"
                 style="color: #193154"
+                :alt="skill.alt"
               />
             </skill-box>
           </div>
@@ -95,6 +97,7 @@ const technologies: SkillBoxProps[][] = [
     {
       skillText: "Node Js",
       slotContent: faNodeJs,
+      alt: "Node Js icon",
     },
     {
       badgeText: "WPF",
@@ -116,6 +119,7 @@ const technologies: SkillBoxProps[][] = [
     {
       skillText: "SOAP",
       slotContent: faPumpSoap,
+      alt: "Pump soap bottle icon",
     },
     {
       badgeText: "TFVC",
@@ -125,6 +129,7 @@ const technologies: SkillBoxProps[][] = [
     {
       skillText: "GIT",
       slotContent: faGitAlt,
+      alt: "Git Alternative Icon",
     },
     {
       badgeText: "BB",
@@ -153,28 +158,34 @@ const languages: SkillBoxProps[][] = [
     {
       skillText: "React",
       slotContent: faReact,
+      alt: "React icon",
     },
     {
       skillText: "C/C++",
       slotContent: faC,
+      alt: "C icon for C and C++",
     },
     {
       skillText: "C#",
       slotContent: faHashtag,
+      alt: "C# Icon",
     },
   ],
   [
     {
       skillText: "HTML",
       slotContent: faHtml5,
+      alt: "HTML5 Icon",
     },
     {
       skillText: "CSS",
       slotContent: faCss3,
+      alt: "CSS Icon",
     },
     {
       skillText: "SASS",
       slotContent: faSass,
+      alt: "SASS Icon",
     },
     {
       badgeText: "JS",

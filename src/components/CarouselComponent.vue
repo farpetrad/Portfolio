@@ -13,6 +13,7 @@
       size="3x"
       style="color: #193154"
       class="me-2 carousel-btn"
+      alt="Arrow pointing left icon for previous slide"
     />
     <font-awesome-icon
       @click="next"
@@ -20,6 +21,7 @@
       size="3x"
       style="color: #193154"
       class="ms-2 carousel-btn"
+      alt="Arrow pointing right icon for next slide"
     />
   </div>
 </template>

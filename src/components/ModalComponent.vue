@@ -10,7 +10,10 @@
             <slot name="header"></slot>
 
             <a v-if="closeInHeader" class="exit" @click="hide" tabindex="0">
-              <font-awesome-icon :icon="faCircleXmark" />
+              <font-awesome-icon
+                :icon="faCircleXmark"
+                alt="Circle with x icon for closing navigation drawer"
+              />
             </a>
           </div>
 

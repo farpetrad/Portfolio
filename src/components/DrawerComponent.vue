@@ -12,7 +12,10 @@
           @click="doClick"
         >
           <h3>
-            <font-awesome-icon :icon="faCircleXmark" />
+            <font-awesome-icon
+              :icon="faCircleXmark"
+              alt="Circle with x icon for closing navigation drawer"
+            />
           </h3>
         </div>
         <div class="col-12">

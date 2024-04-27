@@ -14,13 +14,18 @@
               :icon="faLinkedin"
               size="2x"
               style="color: #ffffff"
+              alt="LinkedIn icon with link to profile"
           /></a>
         </div>
       </div>
       <div class="col-12 offset-xxl-6 col-xxl-2">
         @farpetrad
         <a href="https://github.com/farpetrad" target="_blank" rel="noreferrer">
-          <font-awesome-icon :icon="faGithub" size="2x" style="color: #ffffff"
+          <font-awesome-icon
+            :icon="faGithub"
+            size="2x"
+            style="color: #ffffff"
+            alt="GitHub icon with link to profile"
         /></a>
       </div>
     </div>

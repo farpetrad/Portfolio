@@ -13,7 +13,11 @@
     </div>
     <div class="row mouse">
       <div class="col-12 mouse-scroll-container">
-        <font-awesome-icon :icon="faComputerMouseScrollwheel" size="2x" />
+        <font-awesome-icon
+          :icon="faComputerMouseScrollwheel"
+          size="2x"
+          alt="Mouse with scrollwheel icon"
+        />
       </div>
       <div class="col-12 mouse-scroll-container mt-2">
         <img src="../assets/Arrow 1.svg" class="mouse-icon" />

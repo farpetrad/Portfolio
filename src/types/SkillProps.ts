@@ -5,6 +5,7 @@ type SkillBoxProps = {
   skillText: string;
   color?: string;
   slotContent?: IconDefinition;
+  alt?: string;
 };
 
 export default SkillBoxProps;
