@@ -39,7 +39,7 @@
     <div class="row">
       <div class="col-12 mt-3">
         <div
-          class="badge rounded-pill bg-warning me-2 mt-2 skill"
+          class="badge rounded-pill me-2 mt-2 skill"
           v-for="(skill, index) in skills"
           :key="index"
         >
@@ -89,6 +89,7 @@ const skills = ["Vue.js", "React", "C#", "C/C++"];
   }
   .skill {
     color: #044458;
+    background-color: $secondary;
   }
 }
 </style>
