@@ -11,7 +11,12 @@
               :link="item"
             ></nav-item-text>
             <nav-item-text v-else :key="`e${index}`" :link="item">
-              <font-awesome-icon :icon="item.icon" size="2x" :alt="item.alt" />
+              <font-awesome-icon
+                :icon="item.icon"
+                size="2x"
+                :alt="item.alt"
+                :title="item.alt"
+              />
             </nav-item-text>
           </template>
         </template>

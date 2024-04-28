@@ -15,6 +15,7 @@
               size="2x"
               style="color: #ffffff"
               alt="LinkedIn icon with link to profile"
+              title="LinkedIn icon with link to profile"
           /></a>
         </div>
       </div>
@@ -26,6 +27,7 @@
             size="2x"
             style="color: #ffffff"
             alt="GitHub icon with link to profile"
+            title="GitHub icon with link to profile"
         /></a>
       </div>
     </div>
