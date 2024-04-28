@@ -4,7 +4,7 @@
     :style="{ cursor: slides.length > 0 ? 'pointer' : 'initial' }"
     @click="doShowProjectModal"
   >
-    <img :src="img" class="img-fluid" />
+    <img :src="img" class="img-fluid" :alt="alt" />
   </div>
   <div
     class="offset-1 col-10 col-xxl-6 mt-3 mt-xxl-0 project-description text-start"
@@ -41,11 +41,11 @@
 
 <script lang="ts" setup>
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import ProjectItemProps from "@/types/ProjectItemProps";
+import ProjectItem from "@/types/ProjectItemProps";
 import { defineProps, inject, Ref } from "vue";
 
-let project = inject<Ref<ProjectItemProps>>("selectedProject");
-const props = defineProps<ProjectItemProps>();
+let project = inject<Ref<ProjectItem>>("selectedProject");
+const props = defineProps<ProjectItem>();
 
 function doShowProjectModal() {
   if (project) project.value = props;

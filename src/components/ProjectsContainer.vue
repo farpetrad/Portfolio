@@ -44,24 +44,25 @@
       :codepen-link="project.codepenLink"
       :github-link="project.githubLink"
       :slides="project.slides"
+      :alt="project.alt"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, Ref, provide, computed } from "vue";
-import ProjectItemProps from "@/types/ProjectItemProps";
+import ProjectItem from "@/types/ProjectItemProps";
 import ProjectBox from "./ProjectBox.vue";
 import CarouselComponent from "./CarouselComponent.vue";
 
-const selectedProject: Ref<ProjectItemProps | null> = ref(null);
+const selectedProject: Ref<ProjectItem | null> = ref(null);
 const slides = computed<string[]>(() => {
   if (!selectedProject.value) return [];
   return selectedProject.value.slides;
 });
 const showModal = ref(false);
 provide("selectedProject", selectedProject);
-const projects: ProjectItemProps[] = [
+const projects: ProjectItem[] = [
   {
     name: "Splinterlands",
     description: `Worked with a team of developers to re-write a jQuery website in React,
@@ -72,6 +73,7 @@ const projects: ProjectItemProps[] = [
     year: "2022 - 2024",
     role: "Full-Stack Developer / Architect",
     img: require("../assets/splinterlands.png"),
+    alt: "Screenshot of Splinterlands website",
     projectLink: "https://splinterlands.com",
     slides: [
       require("../assets/splinterlands.png"),
@@ -93,6 +95,7 @@ const projects: ProjectItemProps[] = [
     year: "2018 - 2020",
     role: "Digital Customer Experience .NET Solutions Architect and Lead Vue.js Developer",
     img: require("../assets/login_pulte_mortgage.png"),
+    alt: "Screenshot of Pulte Mortgage Login website",
     projectLink: "https://login.pultemortgage.com/",
     slides: [
       require("../assets/login_pulte_mortgage.png"),
@@ -110,6 +113,7 @@ const projects: ProjectItemProps[] = [
     year: "2018 - 2020",
     role: "Digital Customer Experience .NET Solutions Architect and Lead Vue.js Developer",
     img: require("../assets/pulte_articles.png"),
+    alt: "Screenshot of Pulte Articles website",
     projectLink:
       "https://articles.pultemortgage.com/article/when-a-first-time-buyer-is-also-a-first-time-builder",
     slides: [],

@@ -20,7 +20,11 @@
         />
       </div>
       <div class="col-12 mouse-scroll-container mt-2">
-        <img src="../assets/Arrow 1.svg" class="mouse-icon" />
+        <img
+          src="../assets/Arrow 1.svg"
+          class="mouse-icon"
+          alt="Arrow pointing down"
+        />
       </div>
     </div>
   </div>

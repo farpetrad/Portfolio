@@ -1,6 +1,6 @@
 <template>
   <div class="about_box">
-    <img src="../assets/me.jpg" class="img-cropped" />
+    <img src="../assets/me.jpg" class="img-cropped" alt="My Portrait Photo" />
     <div class="text-center">
       <h4>Neal</h4>
       <h5>Full-stack developer</h5>

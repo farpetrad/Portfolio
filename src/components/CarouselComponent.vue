@@ -34,9 +34,12 @@ import {
 } from "@fortawesome/pro-regular-svg-icons";
 const model = defineModel<string[]>();
 
-watch(model, (newValue: string[], oldValue: string[]) => {
-  if (newValue.length !== oldValue.length) setStep();
-});
+watch(
+  model as unknown as string[],
+  (newValue: string[], oldValue: string[]) => {
+    if (newValue.length !== oldValue.length) setStep();
+  }
+);
 
 const innerStyles = ref({});
 const step = ref("");
