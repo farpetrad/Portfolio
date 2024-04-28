@@ -54,9 +54,10 @@ import { ref, Ref, provide, computed } from "vue";
 import ProjectItem from "@/types/ProjectItemProps";
 import ProjectBox from "./ProjectBox.vue";
 import CarouselComponent from "./CarouselComponent.vue";
+import SlideItem from "@/types/SlideItem";
 
 const selectedProject: Ref<ProjectItem | null> = ref(null);
-const slides = computed<string[]>(() => {
+const slides = computed<SlideItem[]>(() => {
   if (!selectedProject.value) return [];
   return selectedProject.value.slides;
 });
@@ -76,13 +77,34 @@ const projects: ProjectItem[] = [
     alt: "Screenshot of Splinterlands website",
     projectLink: "https://splinterlands.com",
     slides: [
-      require("../assets/splinterlands.png"),
-      require("../assets/splinterlands2.png"),
-      require("../assets/splinterlands3.png"),
-      require("../assets/splinterlands4.png"),
-      require("../assets/splinterlands5.png"),
-      require("../assets/splinterlands6.png"),
-      require("../assets/splinterlands7.png"),
+      {
+        img: require("../assets/splinterlands.png"),
+        alt: "Screenshot of Splinterlands website",
+      },
+      {
+        img: require("../assets/splinterlands2.png"),
+        alt: "Screenshot of Praetoria map",
+      },
+      {
+        img: require("../assets/splinterlands3.png"),
+        alt: "Screenshot of Praetoria production overview",
+      },
+      {
+        img: require("../assets/splinterlands4.png"),
+        alt: "Screenshot of Region production overview",
+      },
+      {
+        img: require("../assets/splinterlands5.png"),
+        alt: "Screenshot of Buy SPS",
+      },
+      {
+        img: require("../assets/splinterlands6.png"),
+        alt: "Screenshot of Battle History",
+      },
+      {
+        img: require("../assets/splinterlands7.png"),
+        alt: "Screenshot of battle",
+      },
     ],
   },
   {
@@ -98,12 +120,30 @@ const projects: ProjectItem[] = [
     alt: "Screenshot of Pulte Mortgage Login website",
     projectLink: "https://login.pultemortgage.com/",
     slides: [
-      require("../assets/login_pulte_mortgage.png"),
-      require("../assets/myloan_dashboard.png"),
-      require("../assets/myloan_dashboard2.png"),
-      require("../assets/myloan_dashboard3.png"),
-      require("../assets/loanquestionnaire.png"),
-      require("../assets/loanquestionnaire2.png"),
+      {
+        img: require("../assets/login_pulte_mortgage.png"),
+        alt: "Screenshot of Pulte Mortgage Login website",
+      },
+      {
+        img: require("../assets/myloan_dashboard.png"),
+        alt: "Screenshot of MyLoan Dashboard with conditions",
+      },
+      {
+        img: require("../assets/myloan_dashboard2.png"),
+        alt: "Screenshot of MyLoan Dashboard Property Location",
+      },
+      {
+        img: require("../assets/myloan_dashboard3.png"),
+        alt: "Screenshot of MyLoan Dashboard profile management screen",
+      },
+      {
+        img: require("../assets/loanquestionnaire.png"),
+        alt: "Screenshot of Loan Questionnaire start screen",
+      },
+      {
+        img: require("../assets/loanquestionnaire2.png"),
+        alt: "Screenshot of Loan Questionnaire screen",
+      },
     ],
   },
   {

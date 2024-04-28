@@ -2,7 +2,7 @@
   <div class="carousel">
     <div ref="inner" :style="innerStyles" class="inner">
       <div v-for="(card, index) in model" :key="index" class="card">
-        <img :src="card" class="img-fluid" />
+        <img :src="card.img" :alt="card.alt" class="img-fluid" />
       </div>
     </div>
   </div>
@@ -32,11 +32,12 @@ import {
   faCircleArrowLeft,
   faCircleArrowRight,
 } from "@fortawesome/pro-regular-svg-icons";
-const model = defineModel<string[]>();
+import SlideItem from "@/types/SlideItem";
+const model = defineModel<SlideItem[]>();
 
 watch(
-  model as unknown as string[],
-  (newValue: string[], oldValue: string[]) => {
+  model as unknown as SlideItem[],
+  (newValue: SlideItem[], oldValue: SlideItem[]) => {
     if (newValue.length !== oldValue.length) setStep();
   }
 );
