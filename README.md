@@ -1,5 +1,6 @@
 # portfolio
-
+Built and tested with Node.js 18.20.1
+Requires FontAwesome Pro License
 ## Project setup
 ```
 npm install
