@@ -79,8 +79,8 @@
           Message failed to send. {{ errorMsg }}
         </div>
       </div>
-      <div class="col-10 offset-1 offset-xxl-0 col-xxl-5 p-0">
-        <div class="code-container row mx-auto text-start">
+      <div class="col-10 offset-1 offset-xxl-0 col-xxl-5 p-0 mb-5">
+        <div class="code-container row mx-auto text-start mb-3">
           <span
             ><span class="number">1.</span>&emsp;const
             <span class="highlight">button</span> =

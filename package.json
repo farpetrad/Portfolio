@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/pro-duotone-svg-icons": "^6.5.2",
     "@fortawesome/pro-light-svg-icons": "^6.5.2",
@@ -29,8 +30,7 @@
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },
-  "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+  "devDependencies": {    
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
