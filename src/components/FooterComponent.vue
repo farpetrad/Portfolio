@@ -4,7 +4,7 @@
       <div class="col-6 col-md-2 text-content">
         <span>find me@: </span>
       </div>
-      <div class="col-4 col-xxl-1">
+      <div class="col-4 col-md-2 col-xxl-1">
         <div class="contact-icon">
           <a
             href="https://www.linkedin.com/in/neal-c-2749305b/"
@@ -19,7 +19,9 @@
           /></a>
         </div>
       </div>
-      <div class="col-6 offset-2 offset-xxl-6 col-xxl-2 text-content">
+      <div
+        class="col-6 offset-2 offset-md-1 offset-xxl-6 col-xxl-2 text-content"
+      >
         @farpetrad
         <a href="https://github.com/farpetrad" target="_blank" rel="noreferrer">
           <font-awesome-icon
