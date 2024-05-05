@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid footer">
     <div class="row h-100">
-      <div class="col-6 col-xxl-2 text-content h-100">
+      <div class="col-6 col-md-2 text-content">
         <span>find me@: </span>
       </div>
       <div class="col-4 col-xxl-1">
@@ -19,7 +19,7 @@
           /></a>
         </div>
       </div>
-      <div class="col-12 offset-xxl-6 col-xxl-2">
+      <div class="col-6 offset-2 offset-xxl-6 col-xxl-2 text-content">
         @farpetrad
         <a href="https://github.com/farpetrad" target="_blank" rel="noreferrer">
           <font-awesome-icon
@@ -50,6 +50,7 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
   .text-content {
     align-content: center;
     text-align: right;
+    height: 3rem;
   }
   .contact-icon {
     border-left: 1px solid white;
