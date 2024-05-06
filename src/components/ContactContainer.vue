@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid" id="contact">
-    <div class="row contact-me-container mb-5">
+    <div class="row contact-me-container">
       <div class="col-10 offset-1 offset-xxl-2 col-xxl-4 text-start">
         <div class="mb-3">
           <h3>CONTACT&nbsp;ME</h3>
@@ -186,7 +186,7 @@ async function sendEmail() {
 
 <style lang="scss">
 #contact {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #ffffff;
   align-content: center;
   .contact-me-container {

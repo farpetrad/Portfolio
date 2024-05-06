@@ -90,13 +90,13 @@ import { faComputerMouseScrollwheel } from "@fortawesome/pro-regular-svg-icons";
   }
 }
 #skills {
-  min-height: 96vh;
+  min-height: 100vh;
   align-content: center;
   background: url("../assets/skills_bg2.png") lightgray -0.286px 0px / 100.03% 137.19%
     no-repeat;
 }
 #projects {
-  min-height: 96vh;
+  min-height: 100vh;
   background-color: $primary;
   color: #ffffff;
 }
