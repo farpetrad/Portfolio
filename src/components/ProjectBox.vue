@@ -55,8 +55,8 @@ function doShowProjectModal() {
 <style lang="scss" scoped>
 .project-img {
   padding: 5rem;
-  justify-content: center;
-  align-items: center;
+  justify-items: center;
+  align-content: center;
   background-color: #343a40;
   img {
     border-radius: 12px;
